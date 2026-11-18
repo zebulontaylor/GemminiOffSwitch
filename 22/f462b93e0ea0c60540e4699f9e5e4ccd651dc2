@@ -1,0 +1,138 @@
+scripts/check_campaign_controls.py
+  s_af7f8d913db7db::t_fb0fc3ad8a9c57 37
+  s_af7f8d913db7db::t_2a5545735ef587 1-10,12-36,38-63,65-71
+  s_af7f8d913db7db::t_f281d5475c58dc 11,64
+tests/test_campaign_words.py
+  s_af7f8d913db7db::t_4ed5658ead1810 1-66
+results/scaled/catalog/candidate_strata.csv
+  s_af7f8d913db7db::t_f4e13c7ff0657c 1-56
+results/scaled/joint.csv
+  s_af7f8d913db7db::t_269e70ec500a39 1-30
+tests/rtl/cycle_tb.sv
+  s_af7f8d913db7db::t_e36846bc0b4d38 22-23,49-55,78,94-96,111-113,119,128
+results/scaled/figures/unaffected.svg
+  s_af7f8d913db7db::t_2c488674ac2ac1 1-10643,10653-10655,10657-10662,10672-10675,10677-10744
+  s_af7f8d913db7db::t_a48c70778ab18c 10644-10652,10656,10663-10671,10676
+scripts/campaign_cae.sh
+  s_af7f8d913db7db::t_ed652654810b94 1-55,57-82
+  s_af7f8d913db7db::t_208f2e1372a182 56
+results/scaled/cae/hostname.txt
+  s_af7f8d913db7db::t_e752609065e49e 1
+scripts/campaign_words.py
+  s_af7f8d913db7db::t_6171033aa8cea7 1-61,63-81,84-91,93-101,103-104,106-120,129-137,139-148,151,154-168
+  s_af7f8d913db7db::t_9b02b1458a72c2 62,82-83,92,102,105,121-128,138,149-150,152-153,169-179
+README.md
+  s_af7f8d913db7db::t_a3f6113be0a90d 5
+scripts/campaign_prefixes.py
+  s_af7f8d913db7db::t_791b3a9cd13560 1-11,13-42,44-46,49-53,55-58,62-64,67-69,78-80,83-84,88-105
+  s_af7f8d913db7db::t_316adb966143db 59-61
+  s_af7f8d913db7db::t_fb0fc3ad8a9c57 43,65-66,70-77,81-82,86-87
+  s_af7f8d913db7db::t_c9e8f209eabdfb 12,47-48,54,85
+results/scaled/cae/progress.csv
+  s_af7f8d913db7db::t_e752609065e49e 1-1030
+  s_af7f8d913db7db::t_c1a09a9f682a97 1031-1058
+tests/rtl/campaign_monitor.cpp
+  s_af7f8d913db7db::t_81178c54148b07 1-106
+results/scaled/catalog/candidates.csv
+  s_af7f8d913db7db::t_f4e13c7ff0657c 1-1025
+tests/test_select_campaign.py
+  s_af7f8d913db7db::t_b91f3744ea6977 14,60-63
+  s_af7f8d913db7db::t_995cd222d111bb 28
+  s_af7f8d913db7db::t_6cbdac54b00ce5 30-31
+  s_af7f8d913db7db::t_8786fab25cc59a 1-13,15-27,29,32-59,64-67
+scripts/select_campaign.py
+  s_af7f8d913db7db::t_96301169ba0085 239
+  s_af7f8d913db7db::t_235298c5bfe1e3 20,70,79,107-108,113-114,123-124,152,165-166,179,200,240-241
+  s_af7f8d913db7db::t_02b32d802315d3 246
+  s_af7f8d913db7db::t_f8b4313eec64d7 13,25,31-32,186,212,217,221-225,227-232,234
+  s_af7f8d913db7db::t_30c3852d1dc370 102-105,237-238,244-245
+  s_af7f8d913db7db::t_50e12a45dc8b03 1-12,14-19,21-24,26-30,33-69,71-76,80-101,106,109-112,115-122,125-151,153-164,167-178,180-185,187-199,201-207,213-216,219-220,233,235-236,247-267
+  s_af7f8d913db7db::t_223aeb122d8267 208-211,218,226,242-243
+  s_af7f8d913db7db::t_995cd222d111bb 77-78
+results/scaled/catalog/controls.csv
+  s_af7f8d913db7db::t_f4e13c7ff0657c 1-5
+tests/rtl/campaign_controls.csv
+  s_af7f8d913db7db::t_af549ff3216261 1-5
+scripts/prepare_campaign_cases.py
+  s_af7f8d913db7db::t_4fa6a6967d519f 1-33,35-62
+  s_af7f8d913db7db::t_ed652654810b94 34
+scripts/campaign_status.py
+  s_af7f8d913db7db::t_ed652654810b94 28
+  s_af7f8d913db7db::t_dbac9fe22e3f31 1-27,29-56
+scripts/plot_observed_coverage.py
+  s_af7f8d913db7db::t_dbf1f41219944a 1-4,6-32,34-50,52,54-60,62-78,88-92,101-102,106-114,209-212,214-216,222-225
+  s_af7f8d913db7db::t_e81b6c50ce68ef 5,115-139,143-150,152-169,172,175-176,197,205-208,213,217-221
+  s_af7f8d913db7db::t_ab983fc29709f5 51,103-105
+  s_af7f8d913db7db::t_9368d1bdda2229 33,53,61
+  s_af7f8d913db7db::t_8fa8f0cd8743aa 170-171,173-174,177-196,198-204
+  s_af7f8d913db7db::t_dd7644905d92bf 79-87
+  s_af7f8d913db7db::t_b85520fdc2dc9d 151
+  s_af7f8d913db7db::t_235577fb2e8940 93-100,140-142
+scripts/campaign_batch.sh
+  s_af7f8d913db7db::t_e36846bc0b4d38 1-12,14-17,19-20
+  s_af7f8d913db7db::t_ed652654810b94 18
+  s_af7f8d913db7db::t_4bd0d8ab1e1716 13
+tests/test_sample_campaign.py
+  s_af7f8d913db7db::t_32ca59d1454fa4 1-39
+results/scaled/figures/unaffected-subsystems.svg
+  s_af7f8d913db7db::t_2c488674ac2ac1 1-160,162-172,174-536
+  s_af7f8d913db7db::t_a48c70778ab18c 161,173
+results/scaled/cae/compile.log
+  s_af7f8d913db7db::t_e752609065e49e 1-230
+scripts/vcs.py
+  s_af7f8d913db7db::t_e36846bc0b4d38 12-13,23-26
+scripts/campaign_worker.py
+  s_af7f8d913db7db::t_ed652654810b94 12,28
+  s_af7f8d913db7db::t_e36846bc0b4d38 1,4-11,16-27,51-59,63,65-66,88-91
+  s_af7f8d913db7db::t_936372eaadeca0 2-3,13-15,29-50,60-62,64,67-87
+results/scaled/cae/compile.exitcode
+  s_af7f8d913db7db::t_e752609065e49e 1
+tests/test_campaign_status.py
+  s_af7f8d913db7db::t_a5f60313ffffd6 1-36
+results/scaled/catalog/word_summary.json
+  s_af7f8d913db7db::t_4fa6a6967d519f 1-17
+results/scaled/README.md
+  s_af7f8d913db7db::t_8709352926b64e 1-4,25-36,45-59,62-66
+  s_af7f8d913db7db::t_08782faaccdca3 5-24
+  s_af7f8d913db7db::t_a3f6113be0a90d 37-44
+  s_af7f8d913db7db::t_7cde6fe81da8de 60-61
+scripts/publish_campaign_logs.py
+  s_af7f8d913db7db::t_dbac9fe22e3f31 11,13,33,44
+  s_af7f8d913db7db::t_0333568115e219 1-10,12,14-32,34-37,43,46-65
+  s_af7f8d913db7db::t_1ab65816cd0478 38-42,45
+results/README.md
+  s_af7f8d913db7db::t_a3f6113be0a90d 3-4
+results/scaled/figures/joint-vs-union.svg
+  s_af7f8d913db7db::t_cb7a4f8efe1309 1-830
+scripts/sample_campaign.py
+  s_af7f8d913db7db::t_7c7ff8788c8936 1-69,71-89,91-99,101-105,107,109-114
+  s_af7f8d913db7db::t_32ca59d1454fa4 70,90,100,106,108
+results/scaled/selection/progress.csv
+  s_af7f8d913db7db::t_4fef281ef89e56 1-3076
+results/scaled/selection/random-band.csv
+  s_af7f8d913db7db::t_66ff5b6e7b5b48 1-1026
+results/scaled/selection/sites.csv
+  s_af7f8d913db7db::t_a241f78efdfa7c 1-3073
+results/scaled/selection/summary.json
+  s_af7f8d913db7db::t_62c57c1db75a33 1-25
+results/scaled/selection/unaffected-groups.csv
+  s_af7f8d913db7db::t_2ac2c4af2f0a5d 1-23
+scripts/prepare_campaign_monitor.py
+  s_af7f8d913db7db::t_0e5140e78cf1be 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "22f462b93e0ea0c60540e4699f9e5e4ccd651dc2",
+  "prompts": {},
+  "sessions": {
+    "s_af7f8d913db7db": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f048-1ed8-7ec1-a11e-06dd9e2fbe09",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}

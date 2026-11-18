@@ -1,0 +1,23 @@
+.gitmodules
+  s_af7f8d913db7db::t_8ec5b4520da3c6 1-6
+gemmini
+  s_af7f8d913db7db::t_43a7ab558de727 1
+off-switch
+  s_af7f8d913db7db::t_86ccb3690f4ada 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8ecab8aabd5ffeeac00fc6ba3ab9d6011cce76ac",
+  "prompts": {},
+  "sessions": {
+    "s_af7f8d913db7db": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f048-1ed8-7ec1-a11e-06dd9e2fbe09",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}

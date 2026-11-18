@@ -1,0 +1,197 @@
+results/late-flush/tlb-checkpoints/flush_retry/observations.csv
+  s_af7f8d913db7db::t_165279ffb7ffd0 1-9
+results/late-flush/flush_retry/exitcode
+  s_af7f8d913db7db::t_5dcbd84b80b979 1
+results/cycles/selection/sites.csv
+  s_af7f8d913db7db::t_ce8f4415936dcc 1-5
+results/cycles/flush_retry/trace.csv
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-531
+scripts/select_observed.py
+  s_af7f8d913db7db::t_f8793c751c020a 44-47
+  s_af7f8d913db7db::t_b3c4b4b9db5fa7 1-7,9-43,48-55,58-64,67-69,71,81-83,87-88,90-91,93-101,103-107,109-112,120-136
+  s_af7f8d913db7db::t_9c7a731cb9b774 8,56-57,65-66,70,72-80,84-86,89,92,102,108,113-119
+results/late-flush/tlb-checkpoints/hostname.txt
+  s_af7f8d913db7db::t_5dcbd84b80b979 1
+results/late-flush/tlb-checkpoints/flush_retry/run.log
+  s_af7f8d913db7db::t_165279ffb7ffd0 1-14
+results/cycles/allocation/trace.json
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-11
+tests/test_diagnose_uncovered.py
+  s_af7f8d913db7db::t_bdf0877a515a75 39-44
+results/late-flush/tlb-checkpoints/flush_retry/golden.sha256
+  s_af7f8d913db7db::t_165279ffb7ffd0 1
+README.md
+  s_af7f8d913db7db::t_50fcdb4cafb7ea 18,21,23,26,86
+  s_af7f8d913db7db::t_4a550b1ccaf9be 46-47,65-74,77,80,90
+  s_af7f8d913db7db::t_1ae3889b3189e0 48-53,64
+  s_af7f8d913db7db::t_b52da241998543 54-63
+  s_af7f8d913db7db::t_d8d763d09c093f 75-76,78-79,81-85,87-89,93,107
+results/late-flush/flush_retry/run.log
+  s_af7f8d913db7db::t_5dcbd84b80b979 1-14
+scripts/compare_traces.py
+  s_af7f8d913db7db::t_ad21dba552f379 1-132,134-158,162,164-166,174-182,187-190,202-215,221-236,240-241,243-248,250-254
+  s_af7f8d913db7db::t_122ba63e0bab39 159-161,163,170,191,194,237-238
+  s_af7f8d913db7db::t_bdd2235af24e2b 133,167-169,171-173,183-186,192-193,195-201,216-220,239,242,249
+results/README.md
+  s_af7f8d913db7db::t_31b0f62a673bba 3-15,17
+  s_af7f8d913db7db::t_b52da241998543 16
+  s_af7f8d913db7db::t_50fcdb4cafb7ea 24-32
+  s_af7f8d913db7db::t_2ecd066895d16d 18-23
+results/cycles/selection/summary.json
+  s_af7f8d913db7db::t_ce8f4415936dcc 1-15
+results/cycles/tag_length/trace.json
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-11
+results/cycles/selection/targets.csv
+  s_af7f8d913db7db::t_ce8f4415936dcc 1-531
+results/late-flush/flush_retry/golden.sha256
+  s_af7f8d913db7db::t_5dcbd84b80b979 1
+results/unlimited/figures/uncovered.svg
+  s_af7f8d913db7db::t_3ffeb75f7c1818 1-642
+scripts/cycle_test_cae.sh
+  s_af7f8d913db7db::t_04c9a25b14ceb1 48
+  s_af7f8d913db7db::t_725013d2dd1239 1-20,22,24-25,27-32,34-35,37-38,41-44,51-53
+  s_af7f8d913db7db::t_99e4ee3d4e4199 21,23,26,33,36,39-40,45-47,49-50
+scripts/plot_cycle_effects.py
+  s_af7f8d913db7db::t_9f46e468372460 1-132
+tests/rtl/cycle_tb.sv
+  s_af7f8d913db7db::t_4e28a856abcc14 1-119
+tests/test_select_nets.py
+  s_af7f8d913db7db::t_32de71900556ba 37-55
+results/cycles/first-effects.svg
+  s_af7f8d913db7db::t_ef2f357e8196a4 1-2605
+results/late-flush/hostname.txt
+  s_af7f8d913db7db::t_5dcbd84b80b979 1
+scripts/diagnose_uncovered.py
+  s_af7f8d913db7db::t_368baf4dd31055 16,53,61-63,75,103,151-152,154-156,203-204,206
+results/unlimited/figures/region-reach.svg
+  s_af7f8d913db7db::t_3ffeb75f7c1818 1-352
+tests/rtl/rocc_workload.svh
+  s_af7f8d913db7db::t_2a6906457a1ebd 31,33,44,90,95-96,99
+  s_af7f8d913db7db::t_6909bd019b8f4c 1-10,13-30,32,34-43,45-56,59-81,83-89,91-94,97-98,100-101,106-107
+  s_af7f8d913db7db::t_5dcbd84b80b979 11-12,57-58,82,102-105
+scripts/import_cycle_results.py
+  s_af7f8d913db7db::t_7a1eecf37d105d 1-112
+results/cycles/pe_mac/trace.csv
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-531
+results/cycles/allocation/trace.csv
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-531
+results/cycles/flush_retry/trace.json
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-11
+results/cycles/pe_mac/trace.json
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-11
+scripts/vcs.py
+  s_af7f8d913db7db::t_4e28a856abcc14 1-29
+results/cycles/trials.csv
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-5
+scripts/plot_selection.py
+  s_af7f8d913db7db::t_9de4ac7fe26453 55-59,103,116,124-132,320-344,358
+tests/test_import_cycle_results.py
+  s_af7f8d913db7db::t_69a5fba6c06064 1-39
+tests/test_compare_traces.py
+  s_af7f8d913db7db::t_3086a748c93b7e 1-38,41-47,54-62
+  s_af7f8d913db7db::t_122ba63e0bab39 39-40,48-49,52-53
+  s_af7f8d913db7db::t_c537aeac4c0ec5 50-51
+results/late-flush/flush_retry/observations.csv
+  s_af7f8d913db7db::t_5dcbd84b80b979 1-531
+scripts/select_nets.py
+  s_af7f8d913db7db::t_55023c998e6a43 155
+  s_af7f8d913db7db::t_368baf4dd31055 54-65,68-71,139-142,148-152,160
+  s_af7f8d913db7db::t_b3c4b4b9db5fa7 243-244
+results/unlimited/figures/coverage.svg
+  s_af7f8d913db7db::t_3ffeb75f7c1818 1-798,800-860
+  s_af7f8d913db7db::t_d8aff747c5c819 799
+tests/test_select_observed.py
+  s_af7f8d913db7db::t_f8793c751c020a 1-66
+results/late-flush/tlb-checkpoints/flush_retry/exitcode
+  s_af7f8d913db7db::t_165279ffb7ffd0 1
+results/cycles/tag_length/trace.csv
+  s_af7f8d913db7db::t_5eb91eb8bd2257 1-531
+results/unlimited/figures/multiplicity.svg
+  s_af7f8d913db7db::t_3ffeb75f7c1818 1-498
+results/cycles/allocation/exitcode
+  s_af7f8d913db7db::t_9caad0d4ebdc17 1
+results/cycles/allocation/golden.sha256
+  s_af7f8d913db7db::t_478092465fc4f7 1
+results/cycles/allocation/observations.csv
+  s_af7f8d913db7db::t_f42e2e0e52375a 1-531
+results/cycles/allocation/run.log
+  s_af7f8d913db7db::t_a04bd76f824416 1-12
+results/cycles/compile.log
+  s_af7f8d913db7db::t_33340473709e8a 1-178
+results/cycles/flush_retry/exitcode
+  s_af7f8d913db7db::t_09f415b3665ed0 1
+results/cycles/flush_retry/golden.sha256
+  s_af7f8d913db7db::t_cb1313663728a7 1
+results/cycles/flush_retry/observations.csv
+  s_af7f8d913db7db::t_c942a78ad9598c 1-531
+results/cycles/flush_retry/run.log
+  s_af7f8d913db7db::t_d6479c8d064141 1-12
+results/cycles/hostname.txt
+  s_af7f8d913db7db::t_9860ab6faecade 1
+results/cycles/pe_mac/exitcode
+  s_af7f8d913db7db::t_33b48f3fcd2eff 1
+results/cycles/pe_mac/golden.sha256
+  s_af7f8d913db7db::t_76561140eeae09 1
+results/cycles/pe_mac/observations.csv
+  s_af7f8d913db7db::t_4d29370cdf29ac 1-531
+results/cycles/pe_mac/run.log
+  s_af7f8d913db7db::t_c3ca328b86e6ff 1-13
+results/cycles/tag_length/exitcode
+  s_af7f8d913db7db::t_1e61bea1cecdb4 1
+results/cycles/tag_length/golden.sha256
+  s_af7f8d913db7db::t_239ff8c0781aa1 1
+results/cycles/tag_length/observations.csv
+  s_af7f8d913db7db::t_78354c582577a4 1-531
+results/cycles/tag_length/run.log
+  s_af7f8d913db7db::t_d9b2fd2c2b4b45 1-12
+results/late-flush/compile.log
+  s_af7f8d913db7db::t_2fb46d5fe30826 1-228
+results/late-flush/tlb-checkpoints/compile.log
+  s_af7f8d913db7db::t_5a1a7a821d929b 1-228
+results/unlimited/gemmini-pe/pe-checkpoints.csv
+  s_af7f8d913db7db::t_2965f2993e39cb 1-1281
+results/unlimited/gemmini-pe/pe-checkpoints.svg
+  s_af7f8d913db7db::t_02e3225fd64dc0 1-2323
+results/unlimited/selection/histogram.csv
+  s_af7f8d913db7db::t_a17fb2ad2e8f87 1-133
+results/unlimited/selection/progress.csv
+  s_af7f8d913db7db::t_8f58a597ce147f 1-133
+results/unlimited/selection/sites.csv
+  s_af7f8d913db7db::t_bd88ee2cdb8e74 1-129
+results/unlimited/selection/summary.json
+  s_af7f8d913db7db::t_5a770868ca55a8 1-11
+results/unlimited/uncovered/distance.csv
+  s_af7f8d913db7db::t_ead6befd409e07 1-2
+results/unlimited/uncovered/exclusions.csv
+  s_af7f8d913db7db::t_ae2b3ec10b6be2 1-6
+results/unlimited/uncovered/kinds.csv
+  s_af7f8d913db7db::t_252f972281f9e7 1-5
+results/unlimited/uncovered/scopes.csv
+  s_af7f8d913db7db::t_eaeb672848fdff 1-1079
+results/unlimited/uncovered/summary.json
+  s_af7f8d913db7db::t_19b4d27043ca74 1-61
+scripts/measure_horizon.py
+  s_af7f8d913db7db::t_eb758d6da99e2c 8,23-24,34-35
+scripts/mesh_checkpoints.py
+  s_af7f8d913db7db::t_fde08eb5fad8f2 75,78-80
+scripts/prepare_cycle_tb.py
+  s_af7f8d913db7db::t_63c94081ae8095 1-117
+tests/rtl/flush_observations.csv
+  s_af7f8d913db7db::t_a44ea5872c93ca 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fa3a03e55e91f999b199c72459a6c7c6d06b33ac",
+  "prompts": {},
+  "sessions": {
+    "s_af7f8d913db7db": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f048-1ed8-7ec1-a11e-06dd9e2fbe09",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}

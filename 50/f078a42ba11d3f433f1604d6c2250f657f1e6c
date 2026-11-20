@@ -1,0 +1,608 @@
+AGENTS.md
+  s_e18c99ef53ef0d::t_81e24a2973dfda 1-3
+results/scaled/functionality/audit.csv
+  s_af7f8d913db7db::t_2f8105dd6ed407 1-351,353-457,459-599,601-650,652-1025
+  s_af7f8d913db7db::t_71c6a13569c1c7 352,458,600,651
+results/scaled/area/rocket-baseline.summary.json
+  s_e18c99ef53ef0d::t_8bbdf88bca67ae 1-17
+results/mesh-profile/output-bytes/combined.csv
+  s_2b526431537cb9::t_6a062f4bf612e6 1-13
+results/off-switch/expiry/run.exitcode
+  s_e18c99ef53ef0d::t_367e0c9f6803ff 1
+scripts/insert_off_switches.py
+  s_2b526431537cb9::t_5949a9971a91ab 19,42-43,146-147,150-151,156-157,159-161,165-175,194,267,288-305,357-361,364-367
+  s_e18c99ef53ef0d::t_b4eda986759384 1-18,21,29-41,44-81,85,88,92,95-96,138-145,148-149,154-155,158,162-164,176-188,190,192-193,195-196,199,202-204,206,208-223,225-230,232-235,243-251,257-259,262,270,272-283,285-286,306,309,312-313,316,319,321-333,336,341-347,349-356,362-363,368-383
+  s_e18c99ef53ef0d::t_c9d85fcb5ace72 22-25,82-84,86-87,89-91,93-94,224
+  s_e18c99ef53ef0d::t_becfe3b66ce59c 26-28,97-137,152-153,197-198,231,236-242,263-266,268-269,271,307-308,310-311,314-315,317-318
+  s_e18c99ef53ef0d::t_62f3055df2a572 189
+  s_e18c99ef53ef0d::t_d79334694d88c7 191
+  s_e18c99ef53ef0d::t_8dd12cc6a8748e 200-201
+  s_e18c99ef53ef0d::t_d4450d5d9c3bab 205
+  s_e18c99ef53ef0d::t_fb127db4454e93 207
+  s_e18c99ef53ef0d::t_678ce86469bbaa 252-256
+  s_e18c99ef53ef0d::t_07040b3e66a367 260-261
+  s_e18c99ef53ef0d::t_ed52911aca7d49 284
+  s_e18c99ef53ef0d::t_099dcf15a3e825 320
+  s_e18c99ef53ef0d::t_f688f71e42e2ca 334-335
+  s_e18c99ef53ef0d::t_8f121650b357d3 337-340
+  s_e18c99ef53ef0d::t_2ecb964fb51573 348
+results/scaled/area/dtlb-switch.summary.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-11
+results/mesh-profile/inserted-rtl/workload-0.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+tests/rtl/cycle_tb.sv
+  s_af7f8d913db7db::t_03b801ee3cbc9d 35-37
+  s_e18c99ef53ef0d::t_de856faedbbd33 103-104
+  s_e18c99ef53ef0d::t_46b440fc84a0b2 25-33,102,107-108,188
+  s_2b526431537cb9::t_efe93d92af3d35 115-131,138-141,149-155,157,177-185
+  s_2b526431537cb9::t_e6fca230ec54da 105-106
+tests/test_hardware_guard.py
+  s_e18c99ef53ef0d::t_b6330a468b0011 1-75
+infra/gemmini/array-switch-sites.csv
+  s_e18c99ef53ef0d::t_b4eda986759384 1-33
+scripts/report_off_switch_lock.py
+  s_2b526431537cb9::t_9b4f04e7f89425 250-253,261-267
+  s_2b526431537cb9::t_7a65f38e6d4a22 254-260
+  s_2b526431537cb9::t_358783d6142e2d 1-6,8-20,22-49,54,56,60,63,87-95,97-110,112-121,123-129,133-139,141-168,170-176,178-197,199-214,216-220,224-231,233-249,268-270,275,279-281,283-287,289-292,294-298,300-307,309-315,319-321,324-325,327-330
+  s_2b526431537cb9::t_5c0f5ac287fe55 7,21,50-53,55,57-59,169,177,198,299
+  s_2b526431537cb9::t_43b78c56b6daee 61-62,64-86,96,111,122,130-132,140
+  s_2b526431537cb9::t_f341a2fb531133 221-223,232,278
+  s_2b526431537cb9::t_4a4a140c81b6d3 215,271-274,276-277,282,288,293,308,316-318,322-323,326
+results/scaled/area/gemmini-switch.summary.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-48
+results/scaled/README.md
+  s_af7f8d913db7db::t_4ed47fa9ec42cf 27-48
+  s_af7f8d913db7db::t_71c6a13569c1c7 25-26
+tests/rtl/off_switch_regression.svh
+  s_e18c99ef53ef0d::t_de856faedbbd33 1,98-99
+  s_e18c99ef53ef0d::t_e3970c3cbddf06 12,15-16,19-29,46,51-52
+  s_2b526431537cb9::t_c1ba0e72c87335 7,114-116,235
+  s_e18c99ef53ef0d::t_b3546b36564adc 8-11,13-14,17-18,30-34,39,41-45,47-50,53-58,61-62,64,66-67,71,73-76,78-79,83-84,86,88-96,101-113,118-119,126-129,131,134-138,141,161-163,193-194,196,198-207,214,216,219-227,233-234
+  s_e18c99ef53ef0d::t_057bb59f73ef6f 2-3,37-38,40,59-60,63,65,68,70,77,80-82,85,87,120,122,142-160,164-192,217
+  s_2b526431537cb9::t_5fcedf795ec875 4-6,35-36,69,72,97,100,117,121,123-125,130,132-133,139-140,195,197,208-213,215,218,228-232
+scripts/hardware_guard.py
+  s_e18c99ef53ef0d::t_219399e48beb34 1-67,69-118
+  s_e18c99ef53ef0d::t_fac61da6b1eed1 68
+results/mesh-profile/inserted-rtl/workload-3.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+results/mesh-profile/individual-lock/verification/switch-sites.csv
+  s_2b526431537cb9::t_d9d4cfab264647 1-33
+infra/gemmini/build.sbt
+  s_e18c99ef53ef0d::t_d4a287c9eb9deb 38
+results/mesh-profile/individual-lock/selection/summary.json
+  s_2b526431537cb9::t_d0aea4ee6de8bc 49-202,205,207
+  s_2b526431537cb9::t_37aad27610790d 1-48,203-204,206,208-210
+scripts/rank_mesh_campaign.py
+  s_2b526431537cb9::t_defdc0a73c8b80 87-93,321-322
+  s_2b526431537cb9::t_a480876a223d2c 212-216
+  s_2b526431537cb9::t_cb0e880e5705cd 1-14,16-18,20,26-72,94-98,103-112,114,117-123,128-159,162-163,179,181-182,184,218-238,241-242,244-245,249,254-261,263,265-281,286-287,290-294,300-307,310-320,323-325,331-332,334,338-348,356-359,362-368,370-373,376-379
+  s_2b526431537cb9::t_c8a2b256521d44 15,327-329,335-337,369
+  s_2b526431537cb9::t_15350443a390ae 160,164,166,170,176-177,210-211
+  s_2b526431537cb9::t_907f6a5afd7703 19,161,165,167-169,171-175,178,183,185-190,192,194-207
+  s_2b526431537cb9::t_3792f74e16b2eb 21-25,73-80,99-102,113,115-116,124-126,295,298-299
+  s_2b526431537cb9::t_3907bde0399fc6 284,308-309
+  s_2b526431537cb9::t_c798649255f53f 180,191,193,208-209,217,239-240,246-248,252,262,264,282-283,285,289,326,330
+  s_2b526431537cb9::t_d3f36d6f14acca 81-86,127,243,250-251,253,288,296-297,333,349-355,360-361,374-375
+results/scaled/area/dtlb-switch.stat.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-97
+scripts/off_switch_lock_batch.sh
+  s_2b526431537cb9::t_99700b31838703 9-34
+  s_2b526431537cb9::t_be868be40b2d85 1-8,35-37
+scripts/license_mailbox_vectors.py
+  s_e18c99ef53ef0d::t_0b75152587b2e3 1-46
+scripts/analyze.sh
+  s_e18c99ef53ef0d::t_219399e48beb34 4-7
+results/mesh-profile/deadline/mesh-sites.csv
+  s_2b526431537cb9::t_8e9167b4b7b62d 1-33
+results/scaled/bus/summary.json
+  s_af7f8d913db7db::t_b1af7e46c853f0 1-429
+scripts/probe_pe.py
+  s_e18c99ef53ef0d::t_219399e48beb34 19-20,220
+results/off-switch/expiry/hostname.txt
+  s_e18c99ef53ef0d::t_367e0c9f6803ff 1
+tests/test_prepare_mesh_bits.py
+  s_2b526431537cb9::t_b36eac4fbb670d 1-43
+scripts/audit_functional_candidates.py
+  s_af7f8d913db7db::t_71c6a13569c1c7 34,68-69
+  s_af7f8d913db7db::t_2f8105dd6ed407 1-33,35-67,70-109
+results/off-switch/rocket-2/compile.exitcode
+  s_e18c99ef53ef0d::t_be32b752a2ad77 1
+results/off-switch/rocket-2/run.exitcode
+  s_e18c99ef53ef0d::t_be32b752a2ad77 1
+results/scaled/area/ecdsa.stat.json
+  s_e18c99ef53ef0d::t_19276ed398873b 3,6-7,15,17,20-21,23-27,30-47,52-53,61,63,66-67,69-73,76-93
+  s_e18c99ef53ef0d::t_b74e7d1289a605 1-2,4-5,8-14,16,18-19,22,28-29,48-51,54-60,62,64-65,68,74-75,94-97
+results/scaled/bus/hostname.txt
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/mesh-profile/deadline/combined.csv
+  s_2b526431537cb9::t_4a2fe45e3c9733 1-13
+results/scaled/bus/batch.exitcode
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/scaled/functionality/passing-clamps.md
+  s_af7f8d913db7db::t_fd0128520248ba 25
+  s_af7f8d913db7db::t_6b08918b1fabf2 26-36
+  s_af7f8d913db7db::t_4334ccfca898ab 23-24
+  s_af7f8d913db7db::t_ade158745fccb9 1-22
+tests/rtl/off_switch_rocket.S
+  s_e18c99ef53ef0d::t_f960530723315d 8,82-84
+  s_e18c99ef53ef0d::t_e72fecd8caacbc 55-70,85,97,120-121
+  s_e18c99ef53ef0d::t_9462b0a760f5cc 45-52,54,128,130-135
+  s_e18c99ef53ef0d::t_1a95a701c78ee1 1-7,9-44,53,71-81,86-96,98-119,122-127,129,136-184
+tests/test_sample_mesh_bits.py
+  s_2b526431537cb9::t_6538e35dc7f126 1-68
+scripts/rank_mesh_output_bytes.py
+  s_2b526431537cb9::t_82360537ec707d 2,12,19-20,33,37-41,43-44,46-52,57-61,63-64,68-72,74-78,117,124-129,134-137,140,142-147,150,153-157
+  s_2b526431537cb9::t_3379de49bf9327 1,3-11,13-18,21-32,34-36,42,45,53-56,62,65-67,73,79-116,118-123,130-133,138-139,141,148-149,151-152,158-203
+results/off-switch/signed-2/run.exitcode
+  s_e18c99ef53ef0d::t_79835cb2265695 1
+results/scaled/bus/00509.exitcode
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/mesh-profile/output-bytes/singles.csv
+  s_2b526431537cb9::t_6a062f4bf612e6 1-129
+results/mesh-profile/individual-lock/verification/summary.md
+  s_2b526431537cb9::t_d9d4cfab264647 1-48,50,52-89,91,93-98
+  s_2b526431537cb9::t_9b4f04e7f89425 49,51,90,92
+tests/rtl/off_switch_rocket_tb.sv
+  s_e18c99ef53ef0d::t_a8804e6e95c6c0 168
+  s_e18c99ef53ef0d::t_e72fecd8caacbc 36-37,117-119,163-167
+  s_e18c99ef53ef0d::t_f006f78fa589b7 123
+  s_e18c99ef53ef0d::t_4efb021d9eca84 160-162
+  s_e18c99ef53ef0d::t_1a95a701c78ee1 1-35,38-116,120-122,124-128,131-159,169-173
+  s_e18c99ef53ef0d::t_27f11891ddeafc 129-130
+results/mesh-profile/output-bytes/sites.csv
+  s_2b526431537cb9::t_3218cd642d5716 1-33
+tests/test_rank_mesh_weakest.py
+  s_2b526431537cb9::t_93041e983bb5bf 31,50
+  s_2b526431537cb9::t_15350443a390ae 72
+  s_2b526431537cb9::t_565a57e36890c3 1-9,11-30,32-49,51,54-62,114-145
+  s_2b526431537cb9::t_de4f099ed20db0 52-53,63-65,107-113
+  s_2b526431537cb9::t_0906f4c3a7802c 10,66-71,73-106
+results/scaled/functionality/README.md
+  s_af7f8d913db7db::t_71c6a13569c1c7 1-18,21-26
+  s_af7f8d913db7db::t_a5ee25637eeebd 20
+  s_af7f8d913db7db::t_fd0128520248ba 19
+scripts/off_switch_rocket_cae.sh
+  s_e18c99ef53ef0d::t_8be412f223d97d 81-84,96-99
+  s_e18c99ef53ef0d::t_1a95a701c78ee1 1-6,13-14,22-47,50-63,67,69,71-73,77-78,85-86,88-92,100,102-104
+  s_e18c99ef53ef0d::t_4efb021d9eca84 64-66,68,70,87,101
+  s_e18c99ef53ef0d::t_e72fecd8caacbc 7-12,17-21,48-49,80,95
+  s_e18c99ef53ef0d::t_b6330a468b0011 74-76,93-94
+  s_e18c99ef53ef0d::t_f960530723315d 15
+  s_e18c99ef53ef0d::t_a1e8b35aa8df6c 16,79
+results/off-switch/expiry/summary.txt
+  s_e18c99ef53ef0d::t_367e0c9f6803ff 1-16
+results/scaled/bus/compile.exitcode
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+scripts/prepare_cycle_tb.py
+  s_e18c99ef53ef0d::t_1ba9dd075e4353 10,32-33
+scripts/campaign_activity.sh
+  s_af7f8d913db7db::t_ba8122e321cef4 1-52
+scripts/elaborate_off_switch_gemmini.py
+  s_e18c99ef53ef0d::t_a6e3cbcebc8e1b 80-81
+  s_e18c99ef53ef0d::t_81e24a2973dfda 13
+  s_e18c99ef53ef0d::t_76284d5cfe8d40 1-11,14,16-39,42-60,62-69,72-78,82-83,86-94
+  s_e18c99ef53ef0d::t_219399e48beb34 12,15,61
+  s_e18c99ef53ef0d::t_f57727c4e49a7e 40-41,70-71,85
+  s_e18c99ef53ef0d::t_d4a287c9eb9deb 79,84
+results/mesh-profile/inserted-rtl/workload-1.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+scripts/off_switch_lock_cae.sh
+  s_2b526431537cb9::t_99700b31838703 95
+  s_2b526431537cb9::t_fe7f5dc0155e90 1-94,96-100
+results/mesh-profile/output-bytes/summary.md
+  s_2b526431537cb9::t_6a062f4bf612e6 1-27
+tests/test_rank_mesh_output_bytes.py
+  s_2b526431537cb9::t_82360537ec707d 28,39-44,47-54,57-58,60,64-68,73,76-79,82-86,88,95-104
+  s_2b526431537cb9::t_1df4de37093f21 1-27,29-38,45-46,55-56,59,61-63,69-72,74-75,80-81,87,89-90,93-94,105-110
+  s_2b526431537cb9::t_f1d3f9605df473 91-92
+results/scaled/bus/00509.golden.sha256
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/mesh-profile/individual-lock/README.md
+  s_2b526431537cb9::t_ce47615940937d 34
+  s_2b526431537cb9::t_13debe8b42ed8c 1-2,4-13,15-20,24,30,32,38,40
+  s_2b526431537cb9::t_38a8ce33cbf123 3
+  s_2b526431537cb9::t_8f5bc8f5b91532 14
+  s_2b526431537cb9::t_7e926d31a31202 21-23
+  s_2b526431537cb9::t_9e4344a245791f 25-29
+  s_2b526431537cb9::t_599314f669fe1b 31
+  s_2b526431537cb9::t_a506afbe7cbf1f 33
+  s_2b526431537cb9::t_2c1c83b88f072d 35-37
+  s_2b526431537cb9::t_e31749cebcbda0 39
+  s_2b526431537cb9::t_6808feffd14549 41-43
+results/mesh-profile/inserted-rtl/workload-2.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+results/scaled/area/dtlb-baseline.summary.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-11
+results/off-switch/README.md
+  s_e18c99ef53ef0d::t_c6accd62afe06f 9
+  s_e18c99ef53ef0d::t_1d2edfb56d43e3 1-7,12-20,22-33
+  s_e18c99ef53ef0d::t_a59bf7b33f3996 10
+  s_e18c99ef53ef0d::t_fea2a877dd8097 8,11,21
+results/off-switch/array-32/hostname.txt
+  s_e18c99ef53ef0d::t_e6b21ca1cc5d2f 1
+results/scaled/bus/00330.golden.sha256
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/off-switch/signed-2/hostname.txt
+  s_e18c99ef53ef0d::t_79835cb2265695 1
+results/mesh-profile/combined.csv
+  s_2b526431537cb9::t_c24f856c74615a 1-9
+scripts/off_switch_lock_verilator.sh
+  s_2b526431537cb9::t_34bc0ad80734a3 6-23,34,71,74-92
+  s_2b526431537cb9::t_e79659b8a902a3 25,30-33,94-119
+  s_2b526431537cb9::t_b9cf60dce5e923 1-5,24,26-29,35-70,72-73,93,120-122
+  s_2b526431537cb9::t_1c63d11330b248 123
+tests/test_insert_off_switches.py
+  s_2b526431537cb9::t_1992da8389771e 75-98,101-103
+  s_e18c99ef53ef0d::t_3171c24c1384f1 1-65,99,104-110
+  s_e18c99ef53ef0d::t_44eecd3e4b672f 66-74,100
+results/mesh-profile/inserted-rtl/run.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+tests/rtl/campaign_activity.cpp
+  s_af7f8d913db7db::t_ba8122e321cef4 1-70
+results/scaled/bus/compile.log
+  s_af7f8d913db7db::t_de61b58851ac0f 1-232
+results/mesh-profile/individual-lock/verification/cases.csv
+  s_2b526431537cb9::t_d9d4cfab264647 1-265
+results/off-switch/rocket-32/summary.txt
+  s_e18c99ef53ef0d::t_ffbc9822ae162f 1-3
+scripts/rank_mesh_toggles.py
+  s_2b526431537cb9::t_f3d7cf453a82cb 1-18,20-52,56-104,106,112-150,153,159-169,173-186,190-192,194-215
+  s_2b526431537cb9::t_aad3601fed33a2 19,53-55,107-110,151-152,154-158,170-172,189,193
+  s_2b526431537cb9::t_1a78d85ce60203 105,111,187-188
+scripts/rank_mesh_lock_screen.py
+  s_2b526431537cb9::t_43b78c56b6daee 1-4,6-17,20-21,29-91,95-146
+  s_2b526431537cb9::t_d81a20620b41d0 5,18-19,22-28,92-94
+  s_2b526431537cb9::t_759aaa4be68926 147-149
+scripts/diagnose_passing_clamps.py
+  s_af7f8d913db7db::t_9ac4349d847917 1-69
+results/mesh-profile/summary.json
+  s_2b526431537cb9::t_c24f856c74615a 7,47,51,53,56-57,59,62-63,65,68-69,71,74-77,80-83,86-89,92-95,98-286
+  s_2b526431537cb9::t_151f19110eddaf 1-6,8-46,48-50,52,54-55,58,60-61,64,66-67,70,72-73,78-79,84-85,90-91,96-97,287
+results/scaled/functionality/active-site-families.csv
+  s_af7f8d913db7db::t_8760d7b8122fd9 167-168,177
+  s_af7f8d913db7db::t_a490310b9cf474 1-166,169-176,178-179
+results/off-switch/array-32/summary.txt
+  s_e18c99ef53ef0d::t_e6b21ca1cc5d2f 1-7
+results/scaled/bus/00330.exitcode
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+tests/rtl/campaign_monitor.cpp
+  s_2b526431537cb9::t_2e9ecd4346b6a8 16-23,73-76,80-82,90-95,97-103,143-146
+  s_2b526431537cb9::t_0a11bee3aae9fd 13-15,109-114,141-142,147
+scripts/prepare_mesh_profile.py
+  s_2b526431537cb9::t_77aad0d730e924 105
+  s_2b526431537cb9::t_2499452bb01520 1-7,9-11,13-19,46-54,68-72,74,82,91-95,104,106-113,116-126
+  s_2b526431537cb9::t_bf9cd409c5e1ce 8,67,83-89
+  s_2b526431537cb9::t_267c144b4046b2 12,20-45,55-66,73,75-81,90,96-103,114-115,127
+results/mesh-profile/inserted-rtl/compile.exitcode
+  s_2b526431537cb9::t_60bdba287408ac 1
+scripts/sample_mesh_bits.py
+  s_2b526431537cb9::t_4cb1caed3f3fed 1-69,72-78,83-84,86-95,97-99,101,103-123,125
+  s_2b526431537cb9::t_6538e35dc7f126 70-71,85,96,102
+  s_2b526431537cb9::t_47a3b6a4453a65 79-82,100,124
+scripts/campaign_bus.py
+  s_af7f8d913db7db::t_d792e86adfca51 9-25,57-163
+  s_af7f8d913db7db::t_78e9d32d85c773 55
+  s_af7f8d913db7db::t_4303b6a97f7469 1-8,26-54,56,164-184
+results/off-switch/rocket-2/hostname.txt
+  s_e18c99ef53ef0d::t_be32b752a2ad77 1
+results/mesh-profile/deadline/wire-effects.md
+  s_2b526431537cb9::t_00f5cf08b286a3 34,36,38-40,42,45,47-52,54-55,57,60,63,65-71
+  s_2b526431537cb9::t_2bf69b9192bcd8 1-33,35,37,41,43-44,46,53,56,58-59,61-62,64,72-79
+results/off-switch/rocket-2/summary.txt
+  s_e18c99ef53ef0d::t_be32b752a2ad77 1-3
+scripts/campaign_activity.py
+  s_af7f8d913db7db::t_4a1202e982fe9b 1-8,10-56,62-105
+  s_af7f8d913db7db::t_b42244409374bb 9,57-61
+scripts/elaborate_gemmini.sh
+  s_e18c99ef53ef0d::t_219399e48beb34 4-7
+tests/rtl/campaign_bus.svh
+  s_af7f8d913db7db::t_03b801ee3cbc9d 1-24
+results/off-switch/rocket-32/run.exitcode
+  s_e18c99ef53ef0d::t_f6449bdcc91ab3 1
+infra/license_mailbox/off_switch_license_mailbox.sv
+  s_e18c99ef53ef0d::t_926b9c3c442afa 1-70
+scripts/prepare_off_switch_regression.py
+  s_e18c99ef53ef0d::t_de856faedbbd33 55
+  s_e18c99ef53ef0d::t_ec8ec0057a6fc9 10,48-54,124-125
+  s_2b526431537cb9::t_88513841050642 9,27-43,80-88
+  s_e18c99ef53ef0d::t_9462b0a760f5cc 66
+  s_e18c99ef53ef0d::t_748d34058ce8a8 79,89,91-98,106-116,121
+  s_e18c99ef53ef0d::t_057bb59f73ef6f 1-8,11-13,15-26,44-47,56-65,67-73,123,126-131
+  s_2b526431537cb9::t_c1ba0e72c87335 76-78,99-105
+  s_e18c99ef53ef0d::t_e3970c3cbddf06 14,132
+  s_e18c99ef53ef0d::t_335cddd3dfc2be 90
+  s_e18c99ef53ef0d::t_bae127255f7048 117-120
+  s_e18c99ef53ef0d::t_e43b68594a347a 122
+scripts/off_switch_test_cae.sh
+  s_e18c99ef53ef0d::t_cf8410dbc351a3 1-12,23-27,29-31,37-38,41-43,52,54-55,68-71,73-78
+  s_e18c99ef53ef0d::t_6fc05e16fee1a0 14-17,32-36,72
+  s_e18c99ef53ef0d::t_e3970c3cbddf06 28
+  s_2b526431537cb9::t_c66ae054690440 18-22,39,46,48-51,56-67
+  s_2b526431537cb9::t_71711e5b6f928d 13,40,44-45,47,53
+tests/rtl/off_switch_lock.svh
+  s_2b526431537cb9::t_c1ba0e72c87335 1-11,13-34,37-65
+  s_2b526431537cb9::t_4d83fdee8bf533 12
+  s_2b526431537cb9::t_99700b31838703 35-36
+results/scaled/area/ecdsa.summary.json
+  s_e18c99ef53ef0d::t_b74e7d1289a605 1-3,5-6,8,10-11
+  s_e18c99ef53ef0d::t_19276ed398873b 4,7,9
+results/mesh-profile/deadline/singles.csv
+  s_2b526431537cb9::t_4a2fe45e3c9733 1-129
+README.md
+  s_e18c99ef53ef0d::t_81e24a2973dfda 43-48
+  s_2b526431537cb9::t_a7073f6212d0c4 18-19
+  s_e18c99ef53ef0d::t_5904d3b480b05b 7-15,17,20-38,40
+  s_e18c99ef53ef0d::t_1d2edfb56d43e3 41-42
+  s_e18c99ef53ef0d::t_5de7e0dcb29580 16
+  s_e18c99ef53ef0d::t_81edd83c7f2056 39
+results/off-switch/rocket-32/compile.exitcode
+  s_e18c99ef53ef0d::t_f6449bdcc91ab3 1
+results/mesh-profile/individual-lock/selection/summary.md
+  s_2b526431537cb9::t_d0aea4ee6de8bc 19-21
+  s_2b526431537cb9::t_c252e8b532e1bf 1-18,22-23
+results/scaled/area/dtlb-baseline.stat.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-97
+results/mesh-profile/summary.md
+  s_2b526431537cb9::t_c24f856c74615a 50-65
+  s_2b526431537cb9::t_577d7972059122 1-49
+results/mesh-profile/deadline/summary.md
+  s_2b526431537cb9::t_4a2fe45e3c9733 1-27
+tests/test_rank_mesh_lock_screen.py
+  s_2b526431537cb9::t_4e600c5eb47c48 1-94
+  s_2b526431537cb9::t_64bbb8241adb69 95-97
+scripts/rank_functional_candidates.py
+  s_af7f8d913db7db::t_80602488235b88 26-28
+  s_af7f8d913db7db::t_16b838732d3901 1-25,29-76
+scripts/stage_license_mailbox.py
+  s_e18c99ef53ef0d::t_926b9c3c442afa 1-33,38-46,48-51,58-64
+  s_e18c99ef53ef0d::t_8f3fb065b5e6cf 34-37,52-57
+  s_e18c99ef53ef0d::t_5d411ce3096d73 47
+scripts/campaign_cae.sh
+  s_2b526431537cb9::t_16ea49f8e76b23 18-26,31
+  s_2b526431537cb9::t_dbd7461f31fb87 17,35-37,40,43,61-63,65,76,78
+results/off-switch/signed-2/summary.txt
+  s_e18c99ef53ef0d::t_79835cb2265695 1-12
+results/scaled/functionality/passing-clamps.csv
+  s_af7f8d913db7db::t_2f77efa3ed8b2e 1-677
+results/scaled/area/gemmini-baseline.summary.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-48
+results/mesh-profile/inserted-rtl/run.log
+  s_2b526431537cb9::t_60bdba287408ac 1-68
+results/scaled/bus/README.md
+  s_af7f8d913db7db::t_48c60755129c62 8
+  s_af7f8d913db7db::t_d2bedd5334c5d8 1-7,9-18
+tests/test_report_off_switch_lock.py
+  s_2b526431537cb9::t_7a65f38e6d4a22 76
+  s_2b526431537cb9::t_0906f4c3a7802c 10,101-130
+  s_2b526431537cb9::t_2ae1d6da359e8f 1-9,11-75,77-100,131-146
+results/scaled/bus/verify-none.exitcode
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+results/scaled/area/rocket-switch.summary.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-18
+results/mesh-profile/README.md
+  s_2b526431537cb9::t_7d05996124a19e 28
+  s_2b526431537cb9::t_a7073f6212d0c4 1-11,13-15,89-93,96-98,100-104,106-109
+  s_2b526431537cb9::t_941aecc26d4aed 12,18,20,44-47,49,86,88
+  s_2b526431537cb9::t_00f5cf08b286a3 69-70
+  s_2b526431537cb9::t_9522fe741e166a 67-68,71-83,87
+  s_2b526431537cb9::t_16ea49f8e76b23 95,105
+  s_2b526431537cb9::t_00fc8b36969c54 110-116
+  s_2b526431537cb9::t_13debe8b42ed8c 16-17
+  s_2b526431537cb9::t_8e9167b4b7b62d 22,48,51-54,58,61
+  s_2b526431537cb9::t_ffe922bee6d813 24-27,29-34,36-43
+  s_2b526431537cb9::t_3306169a6a2bc2 65
+  s_2b526431537cb9::t_60bdba287408ac 84-85
+  s_2b526431537cb9::t_eeaa2bed4673a3 19,21,23,50,55-56,59-60,62-64,66
+  s_2b526431537cb9::t_924f576a7c670c 35,57,94,99
+tests/test_rank_mesh_campaign.py
+  s_2b526431537cb9::t_defdc0a73c8b80 13,19,27,29-31,46-76,93-94,103,109-110,112-115,130-131
+  s_2b526431537cb9::t_c8a2b256521d44 4,117-129
+  s_2b526431537cb9::t_3792f74e16b2eb 32
+  s_2b526431537cb9::t_28aacf1f58e00c 1-3,5-12,14-18,20-26,28,33-45,77-92,95-102,104-108,111,116,132-135
+results/scaled/area/rocket-switch.stat.json
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-183
+results/off-switch/expiry/compile.exitcode
+  s_e18c99ef53ef0d::t_367e0c9f6803ff 1
+results/off-switch/signed-2/compile.exitcode
+  s_e18c99ef53ef0d::t_79835cb2265695 1
+results/scaled/bus/verify-none.golden.sha256
+  s_af7f8d913db7db::t_de61b58851ac0f 1
+infra/gemmini/src/main/scala/Elaborate.scala
+  s_e18c99ef53ef0d::t_8c65f9168ba9d1 22-25
+results/off-switch/rocket-32/hostname.txt
+  s_e18c99ef53ef0d::t_ffbc9822ae162f 1
+scripts/campaign_bus_cae.sh
+  s_af7f8d913db7db::t_03b801ee3cbc9d 1-59
+scripts/off_switch_area.sh
+  s_e18c99ef53ef0d::t_6f23acab4b99ff 35,40-42,79
+  s_e18c99ef53ef0d::t_cbba5272ddd7da 55,57-74,80-82,84,104-105,107-108,115-118,123
+  s_e18c99ef53ef0d::t_32cac7fa96266d 77-78,103,106,114
+  s_e18c99ef53ef0d::t_8eb5972061a440 113
+  s_e18c99ef53ef0d::t_e2b2b5d409f8e9 1-3,8-34,44-54,56,75-76,83,85-102,109-112,119-122,124-128
+  s_e18c99ef53ef0d::t_219399e48beb34 4-7
+  s_e18c99ef53ef0d::t_9096908840d5b7 36-39,43
+scripts/map_area.py
+  s_e18c99ef53ef0d::t_81e24a2973dfda 14
+  s_e18c99ef53ef0d::t_219399e48beb34 11,16,36
+  s_e18c99ef53ef0d::t_030440101129f7 52,54-56,59,74
+  s_e18c99ef53ef0d::t_ac01177043a6b9 1-10,15,17-19,27-29,31-35,37-47,57-58,60-63,65,68,73,75-76,78-98,101,105-107,109-110,114-121
+  s_e18c99ef53ef0d::t_682d393db9016c 30
+  s_e18c99ef53ef0d::t_9495dac9b56671 20-26,48-51,53
+  s_e18c99ef53ef0d::t_78abef079d039f 12-13,69-72,102-104,108,111-113
+  s_e18c99ef53ef0d::t_2346f510e9365e 99-100
+  s_e18c99ef53ef0d::t_81c948d01240ea 64,66-67
+  s_e18c99ef53ef0d::t_185cdd16d78507 77
+results/scaled/area/README.md
+  s_e18c99ef53ef0d::t_83ce455812f440 23-24
+  s_e18c99ef53ef0d::t_d79b1296153ffb 17,19
+  s_e18c99ef53ef0d::t_0f58a1e2284a02 1-2,4,15-16,18,20,25-35
+  s_e18c99ef53ef0d::t_fcfa1595317c39 21-22
+  s_e18c99ef53ef0d::t_bafdb22e31c3e3 5-14
+  s_e18c99ef53ef0d::t_0fb1a9297c9e96 3
+scripts/elaborate_mesh.sh
+  s_e18c99ef53ef0d::t_219399e48beb34 4-7
+tests/rtl/rocc_workload.svh
+  s_2b526431537cb9::t_0eaa83ae80c240 15,18-26,42-65,70,81-85,87-91,116-119,137-140
+  s_af7f8d913db7db::t_03b801ee3cbc9d 125-127
+  s_2b526431537cb9::t_39c1251e62efb1 16-17
+scripts/select_campaign.py
+  s_2b526431537cb9::t_907f6a5afd7703 28,31-32
+results/scaled/area/comparison.txt
+  s_e18c99ef53ef0d::t_56fe5dfc1f7519 1-14
+scripts/netlist.py
+  s_e18c99ef53ef0d::t_219399e48beb34 9-10,23
+results/scaled/area/rocket-baseline.stat.json
+  s_e18c99ef53ef0d::t_8bbdf88bca67ae 1-117
+results/mesh-profile/inserted-rtl/hostname.txt
+  s_2b526431537cb9::t_60bdba287408ac 1
+scripts/rank_mesh_weakest.py
+  s_2b526431537cb9::t_f9c1eff4ffb8ab 1-9,11-13,15-21,26-39,41,45-57,59-65,67-74,76-77,82-106,108-111,119-121,123-137
+  s_2b526431537cb9::t_15350443a390ae 42
+  s_2b526431537cb9::t_907f6a5afd7703 10,58
+  s_2b526431537cb9::t_73671baa8bc61a 14,22-25,43-44,78,81,107,118
+  s_2b526431537cb9::t_de4f099ed20db0 66
+  s_2b526431537cb9::t_d30226fb03e705 40,75,79-80,112-117,122
+results/scaled/area/ecdsa-source.sha256
+  s_e18c99ef53ef0d::t_1a018702df3663 1
+infra/license_mailbox/off_switch.patch
+  s_e18c99ef53ef0d::t_926b9c3c442afa 1-72,98-105
+  s_e18c99ef53ef0d::t_6dc01e1d881213 73-97
+infra/gemmini/src/main/scala/OffSwitchLicenseMMIO.scala
+  s_e18c99ef53ef0d::t_57239b5a26813b 1-83
+results/mesh-profile/baseline.csv
+  s_2b526431537cb9::t_5ed1275cf8af41 1-33
+results/mesh-profile/cases.csv
+  s_2b526431537cb9::t_b82c04a887ec51 1-1141
+results/mesh-profile/deadline/sites.csv
+  s_2b526431537cb9::t_632f544693300b 1-33
+results/mesh-profile/individual-lock/selection/cases.csv
+  s_2b526431537cb9::t_c4cd9f2d292e8b 1-1141
+results/mesh-profile/individual-lock/selection/ranking.csv
+  s_2b526431537cb9::t_bf3e6a7371e027 1-286
+results/mesh-profile/individual-lock/selection/sites.csv
+  s_2b526431537cb9::t_8cd6aab77a37d9 1-33
+results/mesh-profile/qualification.csv
+  s_2b526431537cb9::t_d95273f298031f 1-286
+results/mesh-profile/single-bit-1024/candidates.csv
+  s_2b526431537cb9::t_0df2c0186cfd17 1-1025
+results/mesh-profile/single-bit-1024/selection/cases.csv
+  s_2b526431537cb9::t_f79e7da161e7cd 1-4097
+results/mesh-profile/single-bit-1024/selection/ranking.csv
+  s_2b526431537cb9::t_df1488a290f5c8 1-1025
+results/mesh-profile/single-bit-1024/selection/sites.csv
+  s_2b526431537cb9::t_8155bf9b93372c 1-33
+results/mesh-profile/single-bit-1024/selection/summary.json
+  s_2b526431537cb9::t_57fbc0504714ef 1-262
+results/mesh-profile/single-bit-1024/selection/summary.md
+  s_2b526431537cb9::t_746ed2276271d3 1-21
+results/mesh-profile/single-bit-1024/verification/cases.csv
+  s_2b526431537cb9::t_90d54927c9a2a0 1-265
+results/mesh-profile/single-bit-1024/verification/summary.md
+  s_2b526431537cb9::t_072e164ffc565b 1-98
+results/mesh-profile/single-bit-1024/verification/switch-sites.csv
+  s_2b526431537cb9::t_e1dee290e40d1d 1-33
+results/mesh-profile/single-bit-1024/window.json
+  s_2b526431537cb9::t_4f2e8143be9e93 1-15
+results/mesh-profile/single-bit-1024/wire-roles.md
+  s_2b526431537cb9::t_7ed242d4ce504a 1-51
+results/mesh-profile/single-bit/candidates.csv
+  s_2b526431537cb9::t_63401a83307e7e 1-257
+results/mesh-profile/single-bit/selection/cases.csv
+  s_2b526431537cb9::t_0b03ba9861ad1c 1-1025
+results/mesh-profile/single-bit/selection/ranking.csv
+  s_2b526431537cb9::t_a3f55fb956568d 1-257
+results/mesh-profile/single-bit/selection/sites.csv
+  s_2b526431537cb9::t_095c9097f0a4d3 1-33
+results/mesh-profile/single-bit/selection/summary.json
+  s_2b526431537cb9::t_7aa949bb6ec204 1-118
+results/mesh-profile/single-bit/selection/summary.md
+  s_2b526431537cb9::t_16a55f629cfe2b 1-23
+results/mesh-profile/single-bit/verification/benchmark.json
+  s_2b526431537cb9::t_4c72c6af5315b6 1-16
+results/mesh-profile/single-bit/verification/cases.csv
+  s_2b526431537cb9::t_3d5cc8c037b3a2 1-265
+results/mesh-profile/single-bit/verification/summary.md
+  s_2b526431537cb9::t_46a47a65a4ac24 1-98
+results/mesh-profile/single-bit/verification/switch-sites.csv
+  s_2b526431537cb9::t_8039190778081f 1-33
+results/mesh-profile/single-bit/window.json
+  s_2b526431537cb9::t_f6fc7414b1b9a6 1-15
+results/mesh-profile/sites.csv
+  s_2b526431537cb9::t_dd9b65041fb971 1-33
+results/mesh-profile/toggles/combined.csv
+  s_2b526431537cb9::t_5b68de98877b21 1-25
+results/mesh-profile/toggles/sites.csv
+  s_2b526431537cb9::t_b690faa4cf618e 1-33
+results/mesh-profile/toggles/summary.md
+  s_2b526431537cb9::t_ed8927310204f1 1-61
+results/mesh-profile/toggles/wires.md
+  s_2b526431537cb9::t_c6619eeaa77f1f 1-54
+results/off-switch/array-32/compile.exitcode
+  s_e18c99ef53ef0d::t_fecd264a4b0bf8 1
+results/off-switch/array-32/run.exitcode
+  s_e18c99ef53ef0d::t_78641802e8c79d 1
+results/scaled/activity/compile.exitcode
+  s_af7f8d913db7db::t_cb5360e1140d47 1
+results/scaled/activity/compile.log
+  s_af7f8d913db7db::t_0ff31f9adbf85a 1-230
+results/scaled/activity/golden.sha256
+  s_af7f8d913db7db::t_a78f639eff5eb4 1
+results/scaled/activity/hostname.txt
+  s_af7f8d913db7db::t_1df1249f55d9e4 1
+results/scaled/activity/run.exitcode
+  s_af7f8d913db7db::t_3adf729c401c4e 1
+results/scaled/activity/run.log
+  s_af7f8d913db7db::t_2055d93285fe14 1-11
+results/scaled/activity/summary.json
+  s_af7f8d913db7db::t_905142bfd9123b 1-64
+results/scaled/functionality/qualified-sites.csv
+  s_af7f8d913db7db::t_b318fefa28653c 1-245
+scripts/campaign_batch.sh
+  s_2b526431537cb9::t_f72dc1884cc98c 12-15,18
+scripts/campaign_status.py
+  s_2b526431537cb9::t_d676ad6038a0e1 49
+scripts/campaign_worker.py
+  s_2b526431537cb9::t_cb5b69f76853d2 7,26-33,38,43-49,63,75-76,88,100
+scripts/off_switch_expiry_cae.sh
+  s_e18c99ef53ef0d::t_04044eef6fa7d5 1-57
+scripts/prepare_campaign_cases.py
+  s_2b526431537cb9::t_051204c7dd1662 23,26,39-46
+tests/rtl/off_switch_expiry_tb.sv
+  s_e18c99ef53ef0d::t_34f3946d840d54 1-92
+tests/rtl/off_switch_lock_verilator.cpp
+  s_2b526431537cb9::t_69acae8855d07d 1-58
+tests/test_rank_mesh_toggles.py
+  s_2b526431537cb9::t_38a3d766835481 1-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "50f078a42ba11d3f433f1604d6c2250f657f1e6c",
+  "prompts": {},
+  "sessions": {
+    "s_2b526431537cb9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f657-95dc-7181-a016-68811b1e3eb8",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    },
+    "s_af7f8d913db7db": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f048-1ed8-7ec1-a11e-06dd9e2fbe09",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    },
+    "s_e18c99ef53ef0d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f0e8-2ef0-7d03-94a3-8cf8f5fa5b06",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}

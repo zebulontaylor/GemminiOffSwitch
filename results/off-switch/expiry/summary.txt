@@ -1,0 +1,16 @@
+Reproduce with scripts/off_switch_expiry_cae.sh
+CAE host linux-2017
+VCS Y-2026.03_Full64
+Compile exit 0
+Simulation exit 0
+elapsed=1 short_allowance=8 short_enabled=1 long_allowance=945573 long_enabled=1
+elapsed=2 short_allowance=7 short_enabled=1 long_allowance=945572 long_enabled=1
+elapsed=3 short_allowance=6 short_enabled=1 long_allowance=945571 long_enabled=1
+elapsed=4 short_allowance=5 short_enabled=1 long_allowance=945570 long_enabled=1
+elapsed=5 short_allowance=4 short_enabled=1 long_allowance=945569 long_enabled=1
+elapsed=6 short_allowance=3 short_enabled=1 long_allowance=945568 long_enabled=1
+elapsed=7 short_allowance=2 short_enabled=1 long_allowance=945567 long_enabled=1
+elapsed=8 short_allowance=1 short_enabled=1 long_allowance=945566 long_enabled=1
+elapsed=9 short_allowance=0 short_enabled=0 long_allowance=945565 long_enabled=1
+elapsed=10 short_allowance=0 short_enabled=0 long_allowance=945564 long_enabled=1
+PASS independent allowance expiry

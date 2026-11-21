@@ -1,0 +1,105 @@
+--- a/security_block.sv
++++ b/security_block.sv
+@@ -25,6 +25,8 @@
+ # (
+     parameter bit          CRYPTO_TYPE = 0,  // 1 = HSS-LMS, 0 = ECDSA
+     parameter int unsigned NUM_SIGNERS = 2,  // Number of signers
++    parameter bit NAMESPACE_NONCE = 1'b0,
++    parameter logic [31:0] NONCE_DOMAIN = 32'b0,
+ 
+     // ECDSA delivers its whole license in one beat; HSS-LMS streams elements.
+     localparam int unsigned LICENSE_BEAT_W = CRYPTO_TYPE ? WIDTH
+@@ -58,7 +60,9 @@
+     output logic [WORKLD_W-1:0] workload_result,
+     output logic                result_valid,
+     output logic [ALLOW_W-1:0]  allowance,
+-    output logic                enabled
++    output logic                enabled,
++    output logic [SIGNER_IDX_W-1:0] license_signer,
++    output logic                license_passed
+ );
+ 
+     // -------------------------------------------------------------------------
+@@ -101,6 +105,11 @@
+     logic             trng_request_new;
+     logic [WIDTH-1:0] trng_nonce;
+     logic             trng_nonce_valid;
++    logic [WIDTH-1:0] challenge;
++
++    // The fixed prefix keeps challenges from different verifiers disjoint.
++    assign challenge = NAMESPACE_NONCE ? {NONCE_DOMAIN, trng_nonce[WIDTH-33:0]}
++                                       : trng_nonce;
+ 
+     trng u_trng (
+         .clk         (clk),
+@@ -141,7 +150,7 @@
+                 .clk          (clk),
+                 .rst_n        (rst_n),
+                 .valid        (crypto_valid),
+-                .z            (trng_nonce),
++                .z            (challenge),
+                 .r            (ecdsa_license.r),
+                 .s            (ecdsa_license.s),
+                 .q_x          (ecdsa_pkg::PUBKEYS[signer_q].q_x),
+@@ -156,7 +165,7 @@
+             hss_verify u_hss (
+                 .clk          (clk),
+                 .rst_n        (rst_n),
+-                .message      (trng_nonce),
++                .message      (challenge),
+                 .valid        (crypto_valid),
+                 .ready        (crypto_input_ready),
+                 .data         (license_data),
+@@ -229,7 +238,7 @@
+             StPublishAndWait: begin
+                 if (trng_nonce_valid) begin
+                     nonce_ready = 1;
+-                    nonce       = trng_nonce;
++                    nonce       = challenge;
+                     // Recognise that a transaction is starting; the beats
+                     // themselves are taken by the engine from StWaitVerify.
+                     if (license_valid) begin
+@@ -274,6 +283,8 @@
+     // Assign register based outputs
+     // -------------------------------------------------------------------------
+ 
++    assign license_signer = signer_q;
++    assign license_passed = license_ready && crypto_done && crypto_verif_passed;
+     assign allowance = allowance_q;
+     assign enabled   = (allowance_q != 0) ? 1'b1 : 1'b0;
+ 
+--- a/ecdsa.sv
++++ b/ecdsa.sv
+@@ -245,13 +245,21 @@
+     logic             arith_ready;   // used to increment the PC and sample arith_result
+     logic [WIDTH-1:0] arith_result;  // stored in current_instr.dst register
+ 
++    logic [WIDTH-1:0] arith_a, arith_b;
++
++    // The operands must update when a register changes at the same address.
++    always_comb begin
++        arith_a = reg_read(current_instr.src1);
++        arith_b = reg_read(current_instr.src2);
++    end
++
+     arith u_arith (
+         .clk       (clk),
+         .rst_n     (rst_n),
+         .valid     (arith_valid_q),
+         .op        (current_instr.op),
+-        .a         (reg_read(current_instr.src1)),
+-        .b         (reg_read(current_instr.src2)),
++        .a         (arith_a),
++        .b         (arith_b),
+         .modulus   (modulus),
+         .ready     (arith_ready),
+         .result    (arith_result)
+@@ -312,7 +320,7 @@
+         bit_pos_d      = bit_pos_q;
+         arith_valid_d  = arith_valid_q;
+ 
+-        foreach (reg_file_d[i]) begin
++        for (int i = 0; i < NUM_REGS; i++) begin
+             reg_file_d[i] = reg_file_q[i];
+         end
+ 

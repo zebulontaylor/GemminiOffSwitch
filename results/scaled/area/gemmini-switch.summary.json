@@ -1,0 +1,48 @@
+{
+  "top": "Gemmini",
+  "yosys": "Yosys 0.59+110 (git sha1 8ea51e147, clang++ 18.1.8 -fPIC -O3)",
+  "abc_mapping": "strash; &get -n; &nf; &put",
+  "liberty": "Nangate45_typ.lib",
+  "liberty_sha256": "2efd0b32eb580e4e60e72fc0575bb3bc69aac907c91d908442e4ae6d7fe55895",
+  "area_um2": 1477217.434,
+  "combinational_area_um2": 1118600.224,
+  "sequential_area_um2": 358617.21,
+  "standard_cells": 952183,
+  "combinational_cells": {
+    "AND2_X1": 19296,
+    "AND3_X1": 5196,
+    "AND4_X1": 1047,
+    "AOI211_X1": 2507,
+    "AOI21_X1": 73761,
+    "AOI221_X1": 2846,
+    "AOI222_X1": 615,
+    "AOI22_X1": 2071,
+    "INV_X1": 39688,
+    "MUX2_X1": 186073,
+    "NAND2_X1": 137841,
+    "NAND3_X1": 29370,
+    "NAND4_X1": 12733,
+    "NOR2_X1": 52754,
+    "NOR3_X1": 11465,
+    "NOR4_X1": 10775,
+    "OAI211_X1": 4827,
+    "OAI21_X1": 74658,
+    "OAI221_X1": 1406,
+    "OAI222_X1": 32,
+    "OAI22_X1": 449,
+    "OAI33_X1": 336,
+    "OR2_X1": 15230,
+    "OR3_X1": 3052,
+    "OR4_X1": 1071,
+    "XNOR2_X1": 106662,
+    "XOR2_X1": 77117
+  },
+  "sequential_cells": {
+    "DFF_X1": 79305
+  },
+  "excluded_macro_instances": {
+    "mem_4096x128": 4,
+    "mem_512x512": 2
+  },
+  "abc_input_sha256": "b6355234831281ce86d9fb88c6ad029fdc026860410239ea292f2c4bda27a0bf"
+}

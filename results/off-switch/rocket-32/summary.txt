@@ -1,0 +1,3 @@
+PASS Rocket firmware all nonce domains, malformed rejection, and locked execution during signature verification
+Time: 13295000 ps
+CPU Time:      0.430 seconds;       Data structure size:   2.5Mb

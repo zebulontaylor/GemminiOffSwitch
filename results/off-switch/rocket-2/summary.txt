@@ -1,0 +1,3 @@
+PASS Rocket firmware signer sequence, nonce renewal, site isolation, and locked execution
+Time: 116209335000 ps
+CPU Time:   1355.720 seconds;       Data structure size:   2.0Mb

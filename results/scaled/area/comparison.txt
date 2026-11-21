@@ -1,0 +1,14 @@
+Gemmini baseline:                    1,476,836.788 um^2
+Gemmini with clamps:                 1,477,217.434 um^2
+Gemmini clamp area delta:                  380.646 um^2
+Gemmini relative area delta:                0.026%
+Gemmini DTLB MMIO decode delta:               4.522 um^2
+Rocket outside baseline Gemmini:       481,653.648 um^2
+Rocket outside Gemmini and ECDSA:      936,656.756 um^2
+Rocket baseline with Gemmini:        1,958,490.436 um^2
+Rocket with clamps and mailboxes:    2,413,878.712 um^2
+One ECDSA engine:                       92,666.952 um^2
+32 ECDSA engines:                    2,965,342.464 um^2
+Rocket with all ECDSA engines:       5,379,221.176 um^2
+Rocket area delta with engines:      3,420,730.740 um^2
+Rocket relative area delta:               174.662%

@@ -1,0 +1,7 @@
+ENABLED cycles=1800 tiles=8 commands=48 reads=288 writes=128 active_sites=32
+DIRECT_GRANTS active_independent_switches=32
+TILE_MISMATCH lane_golden=0 tile=9 row=0 col=0 expected=-20 actual=02
+DENIED sites=32 reference_tiles=11 switched_tiles=11 wrong_tiles=2
+OFF_SWITCH_REGRESSION PASS
+Time: 23210000 ps
+CPU Time:      0.500 seconds;       Data structure size:   3.1Mb

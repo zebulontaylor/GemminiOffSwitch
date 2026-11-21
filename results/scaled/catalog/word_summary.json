@@ -1,0 +1,17 @@
+{
+  "top": "Gemmini",
+  "words": 17836,
+  "bits": 278183,
+  "candidates": 14897,
+  "distinct_cell_driver_words": 47377,
+  "cell_driver_words_with_rtl_names": 14925,
+  "public_names_represented": 44577,
+  "omitted_names": {
+    "private_or_non_rtl_name": 31641,
+    "constant": 1559,
+    "multidimensional_packed": 54
+  },
+  "total_yosys_netnames": 77831,
+  "scope": "Distinct nonconstant scalar or one-dimensional packed word vectors with a validated source RTL path. Unpacked memory contents and unnamed synthesis intermediates are outside this catalog.",
+  "sampling": "Each ID measures the listed original RTL representative. Ordered bit vectors coincide in the optimized baseline; a force on one RTL alias need not change every equivalent source path."
+}

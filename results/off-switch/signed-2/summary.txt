@@ -1,0 +1,12 @@
+LICENSE malformed_signature_rejected status=00000011
+LICENSE cross_engine_signature_rejected status=00000011
+LICENSE engine=0 signer=0 signature_accepted status=00000035 grants=0
+LICENSE engine=0 signer=1 signature_accepted status=00000039 grants=1
+LICENSE engine=1 signer=0 signature_accepted status=00000035 grants=1
+LICENSE engine=1 signer=1 signature_accepted status=00000039 grants=3
+ENABLED cycles=1800 tiles=8 commands=48 reads=288 writes=128 active_sites=2
+TILE_MISMATCH lane_golden=0 tile=9 row=0 col=1 expected=-6 actual=f5
+DENIED sites=2 reference_tiles=11 switched_tiles=11 wrong_tiles=2
+OFF_SWITCH_REGRESSION PASS
+Time: 290865860000 ps
+CPU Time:     73.310 seconds;       Data structure size:   3.1Mb

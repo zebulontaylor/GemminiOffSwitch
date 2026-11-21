@@ -1,0 +1,11 @@
+{
+  "top": "ecdsa",
+  "yosys": "Yosys 0.59+110 (git sha1 8ea51e147, clang++ 18.1.8 -fPIC -O3)",
+  "abc_mapping": "strash; &get -n; &nf; &put",
+  "liberty": "Nangate45_typ.lib",
+  "liberty_sha256": "2efd0b32eb580e4e60e72fc0575bb3bc69aac907c91d908442e4ae6d7fe55895",
+  "area_um2": 92666.952,
+  "sequential_area_um2": 34234.2,
+  "standard_cells": 49511,
+  "excluded_macro_instances": {}
+}

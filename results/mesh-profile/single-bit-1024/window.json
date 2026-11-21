@@ -1,0 +1,15 @@
+{
+  "inject": 2,
+  "samples": 1766,
+  "cycles": 1767,
+  "workloads": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "sample_size": 1024,
+  "seed": 20261119,
+  "eligible": 110900,
+  "candidate_mode": "single-bit"
+}

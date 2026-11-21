@@ -1,0 +1,6 @@
+[submodule "gemmini"]
+	path = gemmini
+	url = https://github.com/ucb-bar/gemmini.git
+[submodule "off-switch"]
+	path = off-switch
+	url = https://github.com/JamesPetrie/off-switch.git

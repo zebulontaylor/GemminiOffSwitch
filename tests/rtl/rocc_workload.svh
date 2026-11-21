@@ -44,7 +44,7 @@ task automatic initialize_tile();
             a_sample = xorshift(host_rng);
             host_rng = xorshift(a_sample);
             case (workload)
-                0: begin
+                0, 4: begin
                     tile_a[i][j] = byte'(int'(a_sample % 5) - 2);
                     tile_b[i][j] = byte'(int'(host_rng % 5) - 2);
                 end
@@ -60,6 +60,14 @@ task automatic initialize_tile();
                 3: begin
                     tile_a[i][j] = byte'(int'(a_sample[3:0]) - 8);
                     tile_b[i][j] = byte'(int'(host_rng[3:0]) - 8);
+                end
+                5: begin
+                    tile_a[i][j] = byte'(2 * (int'(a_sample % 5) - 2));
+                    tile_b[i][j] = byte'(int'(host_rng % 5) - 2);
+                end
+                6: begin
+                    tile_a[i][j] = byte'(a_sample[0]);
+                    tile_b[i][j] = byte'(int'(host_rng % 5) - 2);
                 end
             endcase
             `else
@@ -133,7 +141,7 @@ initial begin : run_host
     void'($value$plusargs("LATE_FLUSH=%d", late_flush_after));
     `ifdef MESH_PROFILE
     void'($value$plusargs("WORKLOAD=%d", workload));
-    if (workload < 0 || workload > 3) $fatal(1, "WORKLOAD must be in 0..3");
+    if (workload < 0 || workload > 6) $fatal(1, "WORKLOAD must be in 0..6");
     `endif
     io_cmd_valid = 0;
     io_cmd_bits_inst_funct = 0;
@@ -141,16 +149,25 @@ initial begin : run_host
     io_cmd_bits_rs2 = 0;
     wait (reset === 1'b1);
     @(negedge reset);
-    // Identity scaling, byte stride DIM, unit row strides, weight stationary.
+    // Identity scaling, byte stride DIM, unit row strides, WS (or OS for workload 4).
     issue_rocc(0, {SCALE_ONE, 16'(DIM), 8'd1, 8'd1}, 64'(DIM)); // config_ld
+    `ifdef MESH_PROFILE
+    issue_rocc(0, {SCALE_ONE, 16'd1, (workload == 4 ? 16'd0 : 16'd4)}, 64'h0001_0000_0000_0000); // config_ex
+    `else
     issue_rocc(0, {SCALE_ONE, 16'd1, 16'd4}, 64'h0001_0000_0000_0000); // config_ex
+    `endif
     issue_rocc(0, 2, {SCALE_ONE, 32'(DIM)}); // config_st
     forever begin
         initialize_tile();
         issue_rocc(2, DRAM_BASE + 64'(A_MEM), descriptor(A_SP));
         issue_rocc(2, DRAM_BASE + 64'(B_MEM), descriptor(B_SP));
+        `ifdef MESH_PROFILE
+        issue_rocc(6, descriptor(workload == 4 ? GARBAGE : B_SP), descriptor(C_ACC));
+        issue_rocc(4, descriptor(A_SP), descriptor(workload == 4 ? B_SP : GARBAGE));
+        `else
         issue_rocc(6, descriptor(B_SP), descriptor(C_ACC));
         issue_rocc(4, descriptor(A_SP), descriptor(GARBAGE));
+        `endif
         issue_rocc(3, DRAM_BASE + 64'(C_MEM), descriptor(C_ACC));
         do @(negedge clock); while (io_busy !== 1'b0);
         check_output();

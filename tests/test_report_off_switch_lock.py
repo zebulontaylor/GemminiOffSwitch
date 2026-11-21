@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from verify.report_lock import CYCLES, FORCE_FIELDS, SWITCHES, read_force_cases, read_log, read_sites, report, switch_score
+from verify.report_lock import CYCLES, FORCE_FIELDS, SWITCHES, WORKLOADS, read_force_cases, read_log, read_sites, report, switch_score
 
 
 def write_table(path, rows):
@@ -55,7 +55,7 @@ class OffSwitchLockReportTest(unittest.TestCase):
             write_table(root / "switch-sites.csv", [dict(grant_bit=bit, **site)
                                                    for bit, site in enumerate(sites)])
             force_rows = []
-            for workload in range(4):
+            for workload in range(len(WORKLOADS)):
                 for bit in range(-1, SWITCHES):
                     write_log(root, workload, bit)
                     if bit < 0:
@@ -73,10 +73,10 @@ class OffSwitchLockReportTest(unittest.TestCase):
             summary = (dest / "summary.md").read_text()
             self.assertIn("8 / 8 | 67 / 67", summary)
             self.assertIn("known wrong bytes 2 → 1", summary)
-            self.assertIn("4 missing tiles (1,024 bytes) and 4 known wrong returned bytes", summary)
+            self.assertIn(f"{len(WORKLOADS)} missing tiles ({len(WORKLOADS) * 256:,} bytes) and {len(WORKLOADS)} known wrong returned bytes", summary)
             with (dest / "cases.csv").open(newline="") as stream:
                 cases = list(csv.DictReader(stream))
-            self.assertEqual(len(cases), 264)
+            self.assertEqual(len(cases), (SWITCHES + 1) * len(WORKLOADS) * len(CYCLES))
             differing = next(row for row in cases if row["force_differences"])
             self.assertEqual(differing["known_wrong_bytes"], "1")
 
@@ -114,9 +114,9 @@ class OffSwitchLockReportTest(unittest.TestCase):
             write_table(inserted, mapped)
             validated = read_sites(selection, inserted)
             force_rows = [dict(site, case=case, **dict.fromkeys(FORCE_FIELDS.values(), 0))
-                          for site in sites for case in range(4)]
+                          for site in sites for case in range(len(WORKLOADS))]
             write_table(force, force_rows)
-            self.assertEqual(len(read_force_cases(force, validated)), SWITCHES * 4)
+            self.assertEqual(len(read_force_cases(force, validated)), SWITCHES * len(WORKLOADS))
 
             force_rows[0]["bit_index"] = 1
             write_table(force, force_rows)
@@ -129,17 +129,28 @@ class OffSwitchLockReportTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "invalid packed-bit identity for grant bit 1"):
                 read_sites(selection, inserted)
 
-    def test_weakest_tiebreak_prefers_fewer_missing_then_fewer_known_wrong(self):
-        def case(correct, missing, wrong):
-            return dict(correct_tiles=correct, missing_tiles=missing, known_wrong_bytes=wrong)
+    def test_switch_score_ranks_worst_case_failure_then_overall_then_correct_tiles(self):
+        def case(correct, missing_tiles, wrong_bytes, stock_tiles=8):
+            return dict(
+                correct_tiles=correct,
+                stock_tiles=stock_tiles,
+                missing_bytes=missing_tiles * 256,
+                known_wrong_bytes=wrong_bytes,
+                stock_bytes=stock_tiles * 256,
+            )
 
-        worse_max = switch_score([case(0, 0, 0), case(0, 0, 0)])
-        more_missing = switch_score([case(1, 0, 100), case(1, 1, 0)])
-        more_wrong = switch_score([case(1, 0, 100), case(0, 0, 100)])
-        least_restrictive = switch_score([case(1, 0, 90), case(0, 0, 0)])
-        self.assertLess(worse_max, more_missing)
-        self.assertLess(more_missing, more_wrong)
-        self.assertLess(more_wrong, least_restrictive)
+        immediate_deadlock = switch_score([case(0, 8, 0), case(0, 7, 0, stock_tiles=7)])
+        deadlock_after_one = switch_score([case(1, 7, 0), case(1, 6, 0, stock_tiles=7)])
+        column_kill_high_tot = switch_score([case(0, 0, 128), case(0, 0, 160)])
+        column_kill_low_tot = switch_score([case(0, 0, 128), case(0, 0, 128)])
+        column_kill_more_corr = switch_score([case(1, 0, 128), case(0, 0, 128)])
+        bypassed_on_one = switch_score([case(0, 0, 2048), case(8, 0, 0)])
+
+        self.assertLess(immediate_deadlock, deadlock_after_one)
+        self.assertLess(deadlock_after_one, column_kill_high_tot)
+        self.assertLess(column_kill_high_tot, column_kill_low_tot)
+        self.assertLess(column_kill_low_tot, column_kill_more_corr)
+        self.assertLess(column_kill_more_corr, bypassed_on_one)
 
 
 if __name__ == "__main__":

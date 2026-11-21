@@ -109,7 +109,7 @@ module load synopsys/vcs-mx/2026.03
 
 # Round-robin cases across licensed containers and preserve each simulation's status.
 pids=()
-case_count=$((4 * (switch_count + 1)))
+case_count=$((7 * (switch_count + 1)))
 if (( jobs > case_count )); then jobs=$case_count; fi
 for ((group = 0; group < jobs; group++)); do
     cases=()

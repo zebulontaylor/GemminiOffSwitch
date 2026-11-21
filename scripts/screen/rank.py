@@ -99,16 +99,23 @@ def rank(logs, output):
                               **counts, wrong_bytes=row["wrong_bytes"], failed_bytes=row["failed_bytes"],
                               invalid_request_cycle=row["invalid_request_cycle"],
                               masked_active_cycles=row["masked_active_cycles"]))
-        scores[mesh_id] = switch_score(results)
+        score = switch_score(results)
+        scores[mesh_id] = score
         trials[mesh_id] = cases
         totals = {f"total_{key}": sum(row[key] for row in cases) for key in TOTAL_COUNTS}
-        rankings.append(dict(**identity, max_successful_tiles=scores[mesh_id][0], **totals))
+        rankings.append(dict(
+            **identity,
+            min_known_failed_pct=round(float(-score[0]) * 100, 4),
+            total_known_failed_pct=round(float(-score[1]) * 100, 4),
+            max_successful_tiles=max(row["correct_tiles"] for row in results),
+            **totals,
+        ))
     rankings.sort(key=lambda row: (*scores[row["mesh_id"]], row["mesh_id"]))
     ordered = [dict(rank=position, **row) for position, row in enumerate(rankings, 1)]
     selected = ordered[:SWITCHES]
     cases = [dict(rank=row["rank"], **trial) for row in ordered for trial in trials[row["mesh_id"]]]
     cutoff = selected[-1]
-    cutoff_primary = [row for row in ordered if row["max_successful_tiles"] == cutoff["max_successful_tiles"]]
+    cutoff_primary = [row for row in ordered if scores[row["mesh_id"]][0] == scores[cutoff["mesh_id"]][0]]
 
     summary = dict(
         cycles=DEADLINE,
@@ -133,27 +140,29 @@ def render_summary(summary):
         f"Verilator tested {summary['tested_sites']} sites with one grant held low from reset in each trial. "
         f"The ranking uses output counts at cycle {summary['cycles']:,} and selects the first "
         f"{summary['selected_sites']} sites for insertion.", "",
-        "Sites with the fewest correct tiles in their best workload rank first. Ties favor more missing "
-        "tiles across workloads, then more known wrong returned bytes, then lower dense mesh ID. "
-        "Unknown bytes make a tile incorrect and are excluded from the known wrong byte count.", "",
+        "Sites with the largest worst-case workload known failure fraction (missing plus known wrong bytes "
+        "divided by expected bytes) rank first. Ties favor higher overall known failure fraction across "
+        "workloads, then lower worst-case correct-tile fraction, then lower dense mesh ID. "
+        "Unknown bytes make a tile incorrect and are excluded from known failed bytes.", "",
         "| Workload | All-granted correct tiles |", "|---:|---:|",
     ]
     for workload, tiles in summary["expected_tiles_by_workload"].items():
         lines.append(f"| {workload} | {tiles} |")
     lines.extend([
-        "", "| Rank | Mesh ID | Path | Max correct tiles | Total missing tiles | Total known wrong bytes |",
-        "|---:|---:|---|---:|---:|---:|",
+        "", "| Rank | Mesh ID | Path | Min failed % | Total failed % | Max correct tiles | Total missing tiles | Total known wrong bytes |",
+        "|---:|---:|---|---:|---:|---:|---:|---:|",
     ])
     for row in (summary["strongest"], summary["cutoff"]):
         lines.append(
-            f"| {row['rank']} | {row['mesh_id']} | `{row['path']}` | {row['max_successful_tiles']} | "
+            f"| {row['rank']} | {row['mesh_id']} | `{row['path']}` | {row['min_known_failed_pct']:.2f}% | "
+            f"{row['total_known_failed_pct']:.2f}% | {row['max_successful_tiles']} | "
             f"{row['total_missing_tiles']} | {row['total_corrupt_bytes']} |"
         )
     tied = len(summary["cutoff_primary_tied_mesh_ids"])
     selected = summary["cutoff_primary_selected"]
-    correct = summary["cutoff"]["max_successful_tiles"]
+    min_failed = summary["cutoff"]["min_known_failed_pct"]
     lines.extend([
-        "", f"At the cutoff, {tied} sites had a maximum of {correct} correct tiles. "
+        "", f"At the cutoff, {tied} sites had a worst-case workload known failure rate of {min_failed:.2f}%. "
         f"The remaining criteria placed {selected} of those sites in the selection.", "",
         "[Selected sites](sites.csv) · [All ranks](ranking.csv) · [Individual workload counts](cases.csv)", "",
     ])

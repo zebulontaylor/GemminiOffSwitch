@@ -3,16 +3,20 @@
 
 import argparse
 import csv
+from fractions import Fraction
 import gzip
 import re
 from pathlib import Path
 
 
 WORKLOADS = (
-    "Dense pseudorandom inputs from −2 through 2",
-    "Dense nonzero inputs drawn from −2, −1, 1 and 2",
-    "Signed permutation matrix times a full-range signed-byte matrix",
-    "Dense inputs from −8 through 7, exercising output saturation",
+    "Weight-stationary dense pseudorandom inputs from −2 through 2",
+    "Weight-stationary dense nonzero inputs drawn from −2, −1, 1 and 2",
+    "Weight-stationary signed permutation matrix times a full-range signed-byte matrix",
+    "Weight-stationary dense inputs from −8 through 7, exercising output saturation",
+    "Output-stationary dense pseudorandom inputs from −2 through 2",
+    "Weight-stationary even A inputs from −4 through 4 times −2 through 2",
+    "Weight-stationary binary A inputs from 0 through 1 times −2 through 2",
 )
 CYCLES = (1767, 14001)
 SWITCHES = 32
@@ -205,10 +209,12 @@ def collect(directory, sites, force_cases):
 
 
 def switch_score(cases):
+    known_failed = [row["missing_bytes"] + row["known_wrong_bytes"] for row in cases]
+    stock_bytes = [row["stock_bytes"] for row in cases]
     return (
-        max(row["correct_tiles"] for row in cases),
-        -sum(row["missing_tiles"] for row in cases),
-        -sum(row["known_wrong_bytes"] for row in cases),
+        -min(Fraction(failed, total) for failed, total in zip(known_failed, stock_bytes, strict=True)),
+        -Fraction(sum(known_failed), sum(stock_bytes)),
+        max(Fraction(row["correct_tiles"], row["stock_tiles"]) for row in cases),
     )
 
 
@@ -220,7 +226,7 @@ def render_report(rows, sites, screen=False):
         "A correct tile has all 256 bytes equal to the arithmetic result. The stock lane's completed "
         "tiles define the expected count for each workload and checkpoint. Each missing tile accounts "
         "for 256 missing bytes. Known wrong bytes count mismatches with a known returned value. "
-        "Unknown bytes also make a tile incorrect.", "",
+        "Unknown bytes also make a tile incorrect and are excluded from known failed bytes.", "",
         "| Workload | Operands | " + " | ".join(f"Cycle {cycle:,} expected / all granted correct" for cycle in CYCLES) + " |",
         "|---:|---|" + "---:|" * len(CYCLES),
     ]
@@ -234,36 +240,46 @@ def render_report(rows, sites, screen=False):
         lines.extend([
             "", f"## Correct tiles at cycle {cycle:,}", "",
             "| Grant bit | Rank | Path | " + " | ".join(labels)
-            + " | Missing bytes | Known wrong bytes |",
-            "|---:|---:|---|" + "---:|" * (len(WORKLOADS) + 2),
+            + " | Min failed % | Missing bytes | Known wrong bytes |",
+            "|---:|---:|---|" + "---:|" * (len(WORKLOADS) + 3),
         ])
         scores = {}
         for bit, site in enumerate(sites):
             cases = [rows[bit, workload][cycle] for workload in range(len(WORKLOADS))]
             scores[bit] = switch_score(cases)
             counts = " | ".join(str(row["correct_tiles"]) for row in cases)
+            min_pct = f"{float(-scores[bit][0]) * 100:.2f}%"
             missing = sum(row["missing_bytes"] for row in cases)
             wrong = sum(row["known_wrong_bytes"] for row in cases)
-            lines.append(f"| {bit} | {site['rank']} | `{site['path']}` | {counts} | {missing:,} | {wrong:,} |")
+            lines.append(f"| {bit} | {site['rank']} | `{site['path']}` | {counts} | {min_pct} | {missing:,} | {wrong:,} |")
 
         weakest = max(scores.values())
         tied = [bit for bit, score in scores.items() if score[0] == weakest[0]]
         winners = [bit for bit in tied if scores[bit] == weakest]
-        lines.extend(["", f"The largest correct-tile count in any one workload was **{weakest[0]}**. "
-                      f"{len(tied)} of the {len(sites)} locks reached that count."])
+        min_pct = float(-weakest[0]) * 100
+        tot_pct = float(-weakest[1]) * 100
+        lines.extend(["", f"The smallest worst-case workload known failure rate was **{min_pct:.2f}%**. "
+                      f"{len(tied)} of the {len(sites)} locks reached that rate."])
         if len(winners) > 1:
             bits = ", ".join(map(str, winners))
-            lines.extend(["", f"Grant bits {bits} tied on all three measured criteria. Each lock "
-                          f"had {-weakest[1]:,} missing tiles ({-weakest[1] * TILE_BYTES:,} bytes) "
-                          f"and {-weakest[2]:,} known wrong returned bytes."])
+            sample = [rows[winners[0], workload][cycle] for workload in range(len(WORKLOADS))]
+            miss_tiles = sum(row["missing_tiles"] for row in sample)
+            wrong_bytes = sum(row["known_wrong_bytes"] for row in sample)
+            lines.extend(["", f"Grant bits {bits} tied on all three measured criteria ({min_pct:.2f}% "
+                          f"worst-case failed, {tot_pct:.2f}% overall failed). Each lock had "
+                          f"{miss_tiles:,} missing tiles ({miss_tiles * TILE_BYTES:,} bytes) "
+                          f"and {wrong_bytes:,} known wrong returned bytes."])
         else:
             bit = winners[0]
             locked = [rows[bit, workload][cycle] for workload in range(len(WORKLOADS))]
             counts = ", ".join(f"{r['correct_tiles']}/{r['stock_tiles']}" for r in locked)
+            miss_tiles = sum(r["missing_tiles"] for r in locked)
+            wrong_bytes = sum(r["known_wrong_bytes"] for r in locked)
             lines.extend(["", f"**Grant bit {bit} was weakest by the full ranking (selection rank "
-                          f"{sites[bit]['rank']}).** Correct tiles by workload "
+                          f"{sites[bit]['rank']}).** Worst-case workload known failure was {min_pct:.2f}% "
+                          f"({tot_pct:.2f}% overall). Correct tiles by workload "
                           f"(0 through {len(WORKLOADS) - 1}) were {counts}. Across those workloads, "
-                          f"{-weakest[1]:,} tiles were missing and {-weakest[2]:,} returned bytes "
+                          f"{miss_tiles:,} tiles were missing and {wrong_bytes:,} returned bytes "
                           "were known wrong."])
 
     differences = [results[CYCLES[0]] for (bit, _), results in rows.items()

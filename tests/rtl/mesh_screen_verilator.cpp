@@ -27,7 +27,7 @@ namespace {
 
 constexpr int DIM = 16;
 constexpr int TILE_BYTES = DIM * DIM;
-constexpr int NUM_WORKLOADS = 4;
+constexpr int NUM_WORKLOADS = 7;
 constexpr int SHORT_DEADLINE = 1767;
 constexpr int A_MEM = 0x1000;
 constexpr int B_MEM = 0x2000;
@@ -301,6 +301,7 @@ struct HostLane {
                 host_rng = xorshift(a_sample);
                 switch (workload) {
                     case 0:
+                    case 4:
                         tile_a[i][j] = static_cast<int8_t>(static_cast<int>(a_sample % 5U) - 2);
                         tile_b[i][j] = static_cast<int8_t>(static_cast<int>(host_rng % 5U) - 2);
                         break;
@@ -317,6 +318,14 @@ struct HostLane {
                     case 3:
                         tile_a[i][j] = static_cast<int8_t>(static_cast<int>(a_sample & 0xfU) - 8);
                         tile_b[i][j] = static_cast<int8_t>(static_cast<int>(host_rng & 0xfU) - 8);
+                        break;
+                    case 5:
+                        tile_a[i][j] = static_cast<int8_t>(2 * (static_cast<int>(a_sample % 5U) - 2));
+                        tile_b[i][j] = static_cast<int8_t>(static_cast<int>(host_rng % 5U) - 2);
+                        break;
+                    case 6:
+                        tile_a[i][j] = static_cast<int8_t>(a_sample & 1U);
+                        tile_b[i][j] = static_cast<int8_t>(static_cast<int>(host_rng % 5U) - 2);
                         break;
                 }
                 memory[A_MEM + i * DIM + j] = static_cast<uint8_t>(tile_a[i][j]);
@@ -360,16 +369,17 @@ struct HostLane {
     }
 
     Command next_command(std::vector<std::array<uint8_t, TILE_BYTES>>* record_expected = nullptr) {
+        const bool os = (workload == 4);
         switch (phase) {
             case 0: return {0, (uint64_t(SCALE_ONE) << 32) | (uint64_t(DIM) << 16) | (1ULL << 8) | 1ULL, uint64_t(DIM)};
-            case 1: return {0, (uint64_t(SCALE_ONE) << 32) | (1ULL << 16) | 4ULL, 0x0001000000000000ULL};
+            case 1: return {0, (uint64_t(SCALE_ONE) << 32) | (1ULL << 16) | (os ? 0ULL : 4ULL), 0x0001000000000000ULL};
             case 2: return {0, 2ULL, (uint64_t(SCALE_ONE) << 32) | uint64_t(DIM)};
             case 3:
                 initialize_tile(record_expected);
                 return {2, DRAM_BASE + uint64_t(A_MEM), descriptor(A_SP)};
             case 4: return {2, DRAM_BASE + uint64_t(B_MEM), descriptor(B_SP)};
-            case 5: return {6, descriptor(B_SP), descriptor(C_ACC)};
-            case 6: return {4, descriptor(A_SP), descriptor(GARBAGE)};
+            case 5: return {6, descriptor(os ? GARBAGE : B_SP), descriptor(C_ACC)};
+            case 6: return {4, descriptor(A_SP), descriptor(os ? B_SP : GARBAGE)};
             default: return {3, DRAM_BASE + uint64_t(C_MEM), descriptor(C_ACC)};
         }
     }

@@ -48,7 +48,7 @@ if (( $# % 2 != 0 )); then
 fi
 cases=("$@")
 if (( $# == 0 )); then
-    for ((workload = 0; workload < 4; workload++)); do
+    for ((workload = 0; workload < 7; workload++)); do
         for ((bit = -1; bit < switch_count; bit++)); do
             cases+=("$workload" "$bit")
         done
@@ -58,7 +58,7 @@ declare -A seen
 for ((i = 0; i < ${#cases[@]}; i += 2)); do
     workload=${cases[i]}
     bit=${cases[i+1]}
-    if [[ ! $workload =~ ^[0-3]$ || ! $bit =~ ^(-1|0|[1-9][0-9]{0,8})$ ]] ||
+    if [[ ! $workload =~ ^[0-6]$ || ! $bit =~ ^(-1|0|[1-9][0-9]{0,8})$ ]] ||
        (( bit >= switch_count )) || [[ ${seen[$workload,$bit]+present} ]]; then
         echo "Invalid or repeated workload and lock bit: $workload $bit" >&2
         exit 2
@@ -72,7 +72,7 @@ cp "$sites" "$out/"
 rc=0
 TIMEFORMAT='%R'
 if [[ $model_source ]]; then
-    cp "$model_source/version.txt" "$out/"
+    cp "$model_source/version.txt" "$model_source/compile.exitcode" "$out/"
     printf '%s\n' "$model" > "$out/model.txt"
 else
     verilator --version > "$out/version.txt"

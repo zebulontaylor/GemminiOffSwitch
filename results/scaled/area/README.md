@@ -1,6 +1,6 @@
 # Standard-cell area of the signed off-switches
 
-Gemmini uses 32 independently controlled zero clamps covering 343 RTL bits in the systolic array. The Rocket system adds a TileLink MMIO peripheral, a signed-license mailbox for each site, and an ECDSA verifier for each mailbox. The standalone Gemmini comparison measures the clamp logic with grants exposed as inputs. The Rocket comparison includes the mailbox staging registers, nonce and allowance logic, grant routing, and TileLink integration. [Switch sites](../../../infra/gemmini/array-switch-sites.csv)
+Gemmini uses 32 independently controlled zero clamps covering 343 RTL bits in the systolic array (the earlier 32-word site list archived at commit `f65939e`). The Rocket system adds a TileLink MMIO peripheral, a signed-license mailbox for each site, and an ECDSA verifier for each mailbox. The standalone Gemmini comparison measures the clamp logic with grants exposed as inputs. The Rocket comparison includes the mailbox staging registers, nonce and allowance logic, grant routing, and TileLink integration.
 
 ## Results
 

@@ -1,5 +1,5 @@
   localparam int SHORT_DEADLINE = 1767;
-  int lock_bit, masked_active_cycles = 0;
+  int lock_bit, max_cycles, masked_active_cycles = 0;
   logic [SWITCH_COUNT-1:0] expected_grants;
 
   task automatic report_lock_result;

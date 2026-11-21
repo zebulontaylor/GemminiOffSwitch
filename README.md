@@ -13,7 +13,7 @@ git submodule update --init
 python3 scripts/rtl/elaborate_off_switch.py build/elab/gemmini-off-switch
 ```
 
-The [default site list](infra/gemmini/array-switch-sites.csv) defines 32 whole-word array sites (343 bits) under `Gemmini.ex_controller.mesh.mesh`, which match the archived [area comparison](results/scaled/area/README.md) and [authentication regressions](results/off-switch/README.md). Pass `--sites PATH.csv` to choose 1–32 sites (for example, the newer 32-bit [single-bit screened selection](results/mesh-profile/single-bit-1024/selection/sites.csv)). Use a `path` column with names relative to `Gemmini`; row zero is switch zero.
+The [default site list](infra/gemmini/array-switch-sites.csv) defines 32 single-bit array sites (32 bits total) under `Gemmini.ex_controller.mesh.mesh` selected by the 7-workload worst-case failure screen (9 whole-accelerator deadlock control bits and 23 PE bank-selector control bits). Pass `--sites PATH.csv` to choose any 1–32 sites. Use a `path` column with names relative to `Gemmini`; row zero is switch zero.
 
 Each site gets a secp256k1 ECDSA verifier in the MMIO peripheral with its own challenge, signer state, and 64-bit allowance. Its enable reaches only the matching clamp inside the array. While its allowance is zero, the switch drives the selected word or bit to zero. The CPU, caches, and TileLink path to the license registers remain available while every switch is locked. A clamp can corrupt a matrix result while Gemmini still reports completion. Authorize all selected sites before launching work that needs a correct result.
 
@@ -21,8 +21,7 @@ The output directory contains the split SoC RTL and `switch-sites.csv` with the 
 
 ```sh
 scripts/rtl/elaborate_gemmini.sh
-python3 scripts/rtl/insert_off_switches.py build/elab/gemmini build/elab/clamped-array \
-  --sites results/mesh-profile/single-bit-1024/selection/sites.csv
+python3 scripts/rtl/insert_off_switches.py build/elab/gemmini build/elab/clamped-array
 ```
 
 That version exposes `off_switch_grant` as a `Gemmini` input. Use `scripts/rtl/elaborate_off_switch.py` above for processor authentication.
@@ -50,14 +49,17 @@ The prototype uses the [upstream verifier’s published test keys and determinis
 
 Single-bit candidate screening builds a universal uncloned Verilator model of `Mesh`, `Tile`, `PE_256`, and `MacUnit` once, records golden `Mesh` I/O and accumulator schedules from one full `Gemmini` run per workload, evaluates candidates on standalone `VMesh`, and falls back to full `VGemmini` whenever any `Mesh` control output diverges from the golden trace.
 
-Four weight-stationary 16×16 signed matrix workloads are evaluated per site:
+Seven 16×16 signed matrix workloads are evaluated per site, covering both weight-stationary (WS) and output-stationary (OS) dataflows as well as even-only and binary-only `A` operands so single-mode or single-bit-lane bypasses are exposed:
 
-| Workload | Matrix operands |
-|---:|---|
-| 0 | Dense pseudorandom inputs from −2 through 2, including zeros |
-| 1 | Dense nonzero inputs drawn from −2, −1, 1, and 2 |
-| 2 | Signed permutation matrix with rotating diagonal times a full-range signed-byte matrix |
-| 3 | Dense inputs from −8 through 7, exercising signed-byte output saturation |
+| Workload | Mode | Matrix operands |
+|---:|---|---|
+| 0 | WS | Dense pseudorandom inputs from −2 through 2, including zeros |
+| 1 | WS | Dense nonzero inputs drawn from −2, −1, 1, and 2 |
+| 2 | WS | Signed permutation matrix with rotating diagonal times a full-range signed-byte matrix |
+| 3 | WS | Dense inputs from −8 through 7, exercising signed-byte output saturation |
+| 4 | OS | Dense pseudorandom inputs from −2 through 2 |
+| 5 | WS | Even `A` inputs from −4 through 4 times −2 through 2 |
+| 6 | WS | Binary `A` inputs from 0 through 1 times −2 through 2 |
 
 With stock Gemmini elaborated at `build/elab/gemmini` and Verilator installed, screen a stratified sample of `N` single-bit sites (or `--all` for all 110,900 eligible bits, or `--sites PATH.csv`) and rank the top 32 at cycle 1,767:
 
@@ -79,7 +81,7 @@ python3 scripts/screen/catalog_words.py netlist --top Gemmini --out build/netlis
 python3 scripts/screen/catalog_words.py catalog --publish results/scaled/catalog
 ```
 
-Sites with the fewest correct tiles in their best workload rank first; ties favor more missing tiles across workloads, then more known wrong returned bytes, then ascending dense mesh ID.
+Sites with the largest worst-case workload known failure fraction (missing plus known wrong bytes divided by expected bytes) rank first; ties favor higher overall known failure fraction across workloads, then lower worst-case correct-tile fraction, then ascending dense mesh ID.
 
 ## Verify inserted switches and measure area
 

@@ -54,7 +54,7 @@ python3 vcs.py compile "${profile_args[@]}" +define+OFF_SWITCH_REGRESSION +defin
 echo "$rc" >compile.exitcode
 (( rc == 0 )) || exit "$rc"
 if [[ $2 == 1 ]]; then
-    for workload in 0 1 2 3; do
+    for workload in 0 1 2 3 4 5 6; do
         case_rc=0
         python3 vcs.py run ./simv +vcs+initreg+0 "+WORKLOAD=$workload" >"workload-$workload.log" 2>&1 || case_rc=$?
         echo "$case_rc" >"workload-$workload.exitcode"

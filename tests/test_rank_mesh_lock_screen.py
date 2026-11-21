@@ -132,6 +132,30 @@ class RankMeshLockScreenTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "expected"):
                 rank(logs_csv, root / "out_missing")
 
+    def test_rank_penalizes_single_workload_bypass_and_promotes_deadlock_after_one_tile(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            logs = root / "logs"
+            output = root / "selection"
+            write_screen(logs)
+            # Bit 0 (mesh_id=500): bypassed (0% failed) on workload 4, 100% wrong on all other workloads
+            for workload in range(len(WORKLOADS)):
+                if workload == 4:
+                    write_trial(logs, workload, 0, returned_tiles=8, correct_tiles=8, wrong_tiles=0,
+                                wrong_bytes=0, unknown_bytes=0, missing_tiles=0, missing_bytes=0, failed_bytes=0)
+                else:
+                    write_trial(logs, workload, 0, returned_tiles=8, correct_tiles=0, wrong_tiles=8,
+                                wrong_bytes=2048, unknown_bytes=0, missing_tiles=0, missing_bytes=0, failed_bytes=2048)
+            # Bit 1 (mesh_id=499): permanent deadlock after 1 tile (7/8 missing, 1/8 correct) on every workload
+            for workload in range(len(WORKLOADS)):
+                write_trial(logs, workload, 1, returned_tiles=1, correct_tiles=1, wrong_tiles=0,
+                            wrong_bytes=0, unknown_bytes=0, missing_tiles=7, missing_bytes=1792, failed_bytes=1792)
+
+            rank(logs, output)
+            ranked = read_table(output / "ranking.csv")
+            self.assertEqual(ranked[0]["mesh_id"], "499")
+            self.assertEqual(ranked[-1]["mesh_id"], "500")
+
 
 if __name__ == "__main__":
     unittest.main()

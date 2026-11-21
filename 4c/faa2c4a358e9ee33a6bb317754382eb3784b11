@@ -1,0 +1,19 @@
+tests/rtl/off_switch_lock.svh
+  s_bee0bb08a1f3f1::t_1c90285c4d604c 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4cfaa2c4a358e9ee33a6bb317754382eb3784b11",
+  "prompts": {},
+  "sessions": {
+    "s_bee0bb08a1f3f1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1fe88-b4c9-7453-adc5-a110ad8fb1c4",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.gitignore
+  s_af7f8d913db7db::t_0dab0283559f6a 1-3
+.gitmodules
+  s_af7f8d913db7db::t_01ded34960f72e 1-6
+AGENTS.md
+  s_e18c99ef53ef0d::t_304b737638658b 1-3
+gemmini
+  s_af7f8d913db7db::t_4fb6532b6ae995 1
+infra/gemmini/array-switch-sites.csv
+  s_e18c99ef53ef0d::t_557f1c14b90219 1-33
+infra/gemmini/build.sbt
+  s_e18c99ef53ef0d::t_57e459bfcb6609 1-42
+infra/gemmini/project/build.properties
+  s_af7f8d913db7db::t_b5746c893ea4b2 1
+infra/gemmini/repositories
+  s_af7f8d913db7db::t_c923b43b192822 1-3
+infra/gemmini/src/main/scala/OffSwitchLicenseMMIO.scala
+  s_e18c99ef53ef0d::t_fbd4f977bbf2dd 1-83
+infra/license_mailbox/off_switch.patch
+  s_e18c99ef53ef0d::t_88859e84ed95c3 1-105
+infra/license_mailbox/off_switch_license_mailbox.sv
+  s_e18c99ef53ef0d::t_f7d7b61867758b 1-70
+off-switch
+  s_af7f8d913db7db::t_c7169b2a9e1c28 1
+results/mesh-profile/single-bit-1024/candidates.csv
+  s_2b526431537cb9::t_0f7cd240313761 1-1025
+results/mesh-profile/single-bit-1024/selection/cases.csv
+  s_2b526431537cb9::t_412ba478065822 1-4097
+results/mesh-profile/single-bit-1024/selection/ranking.csv
+  s_2b526431537cb9::t_aa87a26420d2d8 1-1025
+results/mesh-profile/single-bit-1024/selection/sites.csv
+  s_2b526431537cb9::t_5913756925c3b4 1-33
+results/mesh-profile/single-bit-1024/selection/summary.json
+  s_2b526431537cb9::t_e51a8837584c46 1-262
+results/mesh-profile/single-bit-1024/selection/summary.md
+  s_2b526431537cb9::t_a183d3595cfcda 1-21
+results/mesh-profile/single-bit-1024/verification/cases.csv
+  s_2b526431537cb9::t_febf4d73ec7441 1-265
+results/mesh-profile/single-bit-1024/verification/summary.md
+  s_2b526431537cb9::t_bb312416b6cf51 1-98
+results/mesh-profile/single-bit-1024/verification/switch-sites.csv
+  s_2b526431537cb9::t_248cc3e93fbfe4 1-33
+results/mesh-profile/single-bit-1024/window.json
+  s_2b526431537cb9::t_8f9d58aaa54abf 1-15
+results/off-switch/array-32/compile.exitcode
+  s_e18c99ef53ef0d::t_6627f7438e9754 1
+results/off-switch/array-32/hostname.txt
+  s_e18c99ef53ef0d::t_ebe4b49309dfc1 1
+results/off-switch/array-32/run.exitcode
+  s_e18c99ef53ef0d::t_45a2f761dd57a5 1
+results/off-switch/array-32/summary.txt
+  s_e18c99ef53ef0d::t_5e4a938759f7dc 1-7
+results/off-switch/expiry/compile.exitcode
+  s_e18c99ef53ef0d::t_e34da96aaa3b02 1
+results/off-switch/expiry/hostname.txt
+  s_e18c99ef53ef0d::t_eec78b85897e63 1
+results/off-switch/expiry/run.exitcode
+  s_e18c99ef53ef0d::t_0cb61b6a798f8c 1
+results/off-switch/expiry/summary.txt
+  s_e18c99ef53ef0d::t_b0a8d61f11d330 1-16
+results/off-switch/rocket-2/compile.exitcode
+  s_e18c99ef53ef0d::t_005c95645374dc 1
+results/off-switch/rocket-2/hostname.txt
+  s_e18c99ef53ef0d::t_0187acaaddc912 1
+results/off-switch/rocket-2/run.exitcode
+  s_e18c99ef53ef0d::t_b13f7988437f0f 1
+results/off-switch/rocket-2/summary.txt
+  s_e18c99ef53ef0d::t_b51e9d61bee10a 1-3
+results/off-switch/rocket-32/compile.exitcode
+  s_e18c99ef53ef0d::t_1c5e7644e96509 1
+results/off-switch/rocket-32/hostname.txt
+  s_e18c99ef53ef0d::t_5063dfde46c69f 1
+results/off-switch/rocket-32/run.exitcode
+  s_e18c99ef53ef0d::t_e9f385651efd81 1
+results/off-switch/rocket-32/summary.txt
+  s_e18c99ef53ef0d::t_2c46929aa6e15c 1-3
+results/off-switch/signed-2/compile.exitcode
+  s_e18c99ef53ef0d::t_288f678c6bbdbb 1
+results/off-switch/signed-2/hostname.txt
+  s_e18c99ef53ef0d::t_b84eb48b89d51b 1
+results/off-switch/signed-2/run.exitcode
+  s_e18c99ef53ef0d::t_e4ad56bc9defc8 1
+results/off-switch/signed-2/summary.txt
+  s_e18c99ef53ef0d::t_53cbbd5cbafb7a 1-12
+results/scaled/area/comparison.txt
+  s_e18c99ef53ef0d::t_424390ceb2b210 1-14
+results/scaled/area/dtlb-baseline.stat.json
+  s_e18c99ef53ef0d::t_5c710ec75520cd 1-97
+results/scaled/area/dtlb-baseline.summary.json
+  s_e18c99ef53ef0d::t_faaf7fe054afd2 1-11
+results/scaled/area/dtlb-switch.stat.json
+  s_e18c99ef53ef0d::t_895f23534e2089 1-97
+results/scaled/area/dtlb-switch.summary.json
+  s_e18c99ef53ef0d::t_63fc148691b07f 1-11
+results/scaled/area/ecdsa-source.sha256
+  s_e18c99ef53ef0d::t_1af4f2c8dba562 1
+results/scaled/area/ecdsa.stat.json
+  s_e18c99ef53ef0d::t_56bdb7f2080a16 1-97
+results/scaled/area/ecdsa.summary.json
+  s_e18c99ef53ef0d::t_19a585161135e4 1-11
+results/scaled/area/gemmini-baseline.summary.json
+  s_e18c99ef53ef0d::t_acd863102b2f92 1-48
+results/scaled/area/gemmini-switch.summary.json
+  s_e18c99ef53ef0d::t_d14780419f2d66 1-48
+results/scaled/area/rocket-baseline.stat.json
+  s_e18c99ef53ef0d::t_7767bf75a97127 1-117
+results/scaled/area/rocket-baseline.summary.json
+  s_e18c99ef53ef0d::t_252c32fe6cf2a3 1-17
+results/scaled/area/rocket-switch.stat.json
+  s_e18c99ef53ef0d::t_c3216d726861ba 1-183
+results/scaled/area/rocket-switch.summary.json
+  s_e18c99ef53ef0d::t_1033c241f78b12 1-18
+results/scaled/catalog/word_summary.json
+  s_af7f8d913db7db::t_e6fe3a59d50e6c 1-17
+scripts/hardware_guard.py
+  s_e18c99ef53ef0d::t_2a5a7be8438d6e 1-118
+scripts/verify/report_lock.py
+  s_2b526431537cb9::t_82e6d5e46202d9 1-330
+scripts/verify/vcs.py
+  s_af7f8d913db7db::t_7a1d9a56f85432 1-33
+tests/rtl/off_switch_expiry_tb.sv
+  s_e18c99ef53ef0d::t_e98e4ea94eee2e 1-92
+tests/rtl/off_switch_lock.svh
+  s_2b526431537cb9::t_3d0405fd0af375 1-65
+tests/rtl/off_switch_lock_verilator.cpp
+  s_2b526431537cb9::t_7ccd96931a57cc 1-58
+tests/rtl/off_switch_regression.svh
+  s_2b526431537cb9::t_1298dec79116a5 1-235
+tests/rtl/off_switch_rocket.S
+  s_e18c99ef53ef0d::t_8a054cb199b1fe 1-184
+tests/rtl/off_switch_rocket_tb.sv
+  s_e18c99ef53ef0d::t_c01593a5ff4328 1-173
+tests/test_hardware_guard.py
+  s_e18c99ef53ef0d::t_2103518b0dfec6 1-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f65939e642f2c0a36d8aeb74ba8d4489173fef1f",
+  "prompts": {},
+  "sessions": {
+    "s_2b526431537cb9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f657-95dc-7181-a016-68811b1e3eb8",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    },
+    "s_af7f8d913db7db": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f048-1ed8-7ec1-a11e-06dd9e2fbe09",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    },
+    "s_e18c99ef53ef0d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f0e8-2ef0-7d03-94a3-8cf8f5fa5b06",
+        "model": "gpt-6.2-astra"
+      },
+      "human_author": "Zeb Taylor <zceboys@gmail.com>"
+    }
+  }
+}
